@@ -40,14 +40,15 @@ print(f"✅ 총 데이터 수: {len(df)}")
 
 print("🌍 지오코딩 설정 중...")
 
-# OpenStreetMap 기반 지오코더
-geolocator = Nominatim(user_agent="gwangju_architecture_gis")
+# OpenStreetMap 기반 지오코더 (타임아웃 10초로 설정)
+geolocator = Nominatim(user_agent="gwangju_architecture_gis", timeout=10)
 
 # 요청 속도 제한 (서버 보호 목적)
 geocode = RateLimiter(
     geolocator.geocode,
     min_delay_seconds=1,
-    swallow_exceptions=True
+    swallow_exceptions=True,
+    max_retries=3
 )
 
 def geocode_address(address):
@@ -55,12 +56,13 @@ def geocode_address(address):
     주소 문자열을 입력받아 위도(latitude), 경도(longitude)를 반환
     """
     try:
-        location = geocode(address)
+        location = geocode(address, timeout=10)
         if location:
             return pd.Series([location.latitude, location.longitude])
         else:
             return pd.Series([None, None])
-    except:
+    except Exception as e:
+        print(f"  ⚠️ 지오코딩 실패: {address}")
         return pd.Series([None, None])
 
 print("📍 주소 → 위·경도 변환 중...")
