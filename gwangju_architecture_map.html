@@ -1,0 +1,4139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_007309ff5982cd3e12380e3d07a9dfca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 50px; right: 50px; width: 280px; height: auto; max-height: 600px;
+     background-color: white; border:2px solid grey; z-index:9999; 
+     font-size:13px; padding: 10px; border-radius: 5px; overflow-y: auto;">
+     <p style="margin: 0 0 8px 0; font-weight: bold; border-bottom: 2px solid #ddd; padding-bottom: 5px;">🏛️ 구별 (색상)</p>
+<p style="margin: 3px 0;"><i class="fa fa-map-marker" style="color:blue"></i> 동구: 27개</p><p style="margin: 3px 0;"><i class="fa fa-map-marker" style="color:red"></i> 서구: 15개</p><p style="margin: 3px 0;"><i class="fa fa-map-marker" style="color:green"></i> 남구: 35개</p><p style="margin: 3px 0;"><i class="fa fa-map-marker" style="color:purple"></i> 북구: 25개</p><p style="margin: 3px 0;"><i class="fa fa-map-marker" style="color:orange"></i> 광산구: 21개</p><p style="margin: 3px 0;"><i class="fa fa-map-marker" style="color:gray"></i> 기타: 0개</p>
+     <p style="margin: 10px 0 8px 0; font-weight: bold; border-top: 1px solid #ddd; border-bottom: 2px solid #ddd; padding: 5px 0;">🏢 용도별</p>
+<p style="margin: 3px 0;">• 교육: 17개</p><p style="margin: 3px 0;">• 문화 및 집회시설: 15개</p><p style="margin: 3px 0;">• 근린생활시설: 13개</p><p style="margin: 3px 0;">• 업무시설: 12개</p><p style="margin: 3px 0;">• 정자: 10개</p><p style="margin: 3px 0;">• 주거: 8개</p><p style="margin: 3px 0;">• 사당: 5개</p><p style="margin: 3px 0;">• 단독주택: 5개</p><p style="margin: 3px 0;">• 운동시설: 4개</p><p style="margin: 3px 0;">• 사찰: 4개</p><p style="margin: 5px 0; font-style: italic; color: #666;">+ 외 19개 용도</p>
+</div>
+    
+            <div class="folium-map" id="map_007309ff5982cd3e12380e3d07a9dfca" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_007309ff5982cd3e12380e3d07a9dfca = L.map(
+                "map_007309ff5982cd3e12380e3d07a9dfca",
+                {
+                    center: [35.1595, 126.8526],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7ccc19aa794eff678ba027ee65127fc3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7ccc19aa794eff678ba027ee65127fc3.addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var marker_c128452b22a83012aec352dc2411f72a = L.marker(
+                [35.1324141, 126.9615604],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_09fb9a1b3aba166470cd86579ae4c42c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4c9b1b904c3cabdddee6c605c65ab5f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4cb73ecbbfb1a81c88f5c8ef2a4541fb = $(`<div id="html_4cb73ecbbfb1a81c88f5c8ef2a4541fb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>증심사</b><br>         주소: 동구 증심사길 177<br>         구: 동구<br>         목적: 사찰<br>         시대: 고대 남북국 시대 통일 신라     </div>     </div>`)[0];
+                popup_b4c9b1b904c3cabdddee6c605c65ab5f.setContent(html_4cb73ecbbfb1a81c88f5c8ef2a4541fb);
+            
+        
+
+        marker_c128452b22a83012aec352dc2411f72a.bindPopup(popup_b4c9b1b904c3cabdddee6c605c65ab5f)
+        ;
+
+        
+    
+    
+                marker_c128452b22a83012aec352dc2411f72a.setIcon(icon_09fb9a1b3aba166470cd86579ae4c42c);
+            
+    
+            var marker_f4018459b035c09cd115575f82470cfe = L.marker(
+                [35.1324141, 126.9615604],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_58c3d6194aa828695df6e51c4321b810 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a014ffffc596d8cf1e2a9866b48a7d3c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_70ed365053c837a58db1ae90333101f4 = $(`<div id="html_70ed365053c837a58db1ae90333101f4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>증심사 오백전</b><br>         주소: 동구 증심사길 177<br>         구: 동구<br>         목적: 사찰<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_a014ffffc596d8cf1e2a9866b48a7d3c.setContent(html_70ed365053c837a58db1ae90333101f4);
+            
+        
+
+        marker_f4018459b035c09cd115575f82470cfe.bindPopup(popup_a014ffffc596d8cf1e2a9866b48a7d3c)
+        ;
+
+        
+    
+    
+                marker_f4018459b035c09cd115575f82470cfe.setIcon(icon_58c3d6194aa828695df6e51c4321b810);
+            
+    
+            var marker_a8167c80d5a85318ef829567e739a017 = L.marker(
+                [35.1530275, 126.8783965],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_aedba9fb9240fde85e8a21024bcb38aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_035a640e379c3f7eca28272b071ac15c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_48b72c9785b1a3b885defc4f37450a25 = $(`<div id="html_48b72c9785b1a3b885defc4f37450a25" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>화담사</b><br>         주소: 서구 화운로156번길 17-8<br>         구: 서구<br>         목적: 사당<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_035a640e379c3f7eca28272b071ac15c.setContent(html_48b72c9785b1a3b885defc4f37450a25);
+            
+        
+
+        marker_a8167c80d5a85318ef829567e739a017.bindPopup(popup_035a640e379c3f7eca28272b071ac15c)
+        ;
+
+        
+    
+    
+                marker_a8167c80d5a85318ef829567e739a017.setIcon(icon_aedba9fb9240fde85e8a21024bcb38aa);
+            
+    
+            var marker_e2c17f5254af4b4498e3f0b29589f23a = L.marker(
+                [35.1456673, 126.9091607],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_c881bfb5188a7c78c4f3dacf2b6e513e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ea441642f3fc610d27ae185a16a6c64 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_154838b27d9b85626df961f329e82e7c = $(`<div id="html_154838b27d9b85626df961f329e82e7c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주향교</b><br>         주소: 남구 중앙로107번길 5<br>         구: 남구<br>         목적: 교육<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_1ea441642f3fc610d27ae185a16a6c64.setContent(html_154838b27d9b85626df961f329e82e7c);
+            
+        
+
+        marker_e2c17f5254af4b4498e3f0b29589f23a.bindPopup(popup_1ea441642f3fc610d27ae185a16a6c64)
+        ;
+
+        
+    
+    
+                marker_e2c17f5254af4b4498e3f0b29589f23a.setIcon(icon_c881bfb5188a7c78c4f3dacf2b6e513e);
+            
+    
+            var marker_4b80e722f23f741734f1e5348a6d6274 = L.marker(
+                [35.0834543, 126.8741382],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_e59723c887572ff0301f96acb40af721 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5989368cbc24ae9902ad439b6470073b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2767e1b80ffcdf8dae1f469d8309ecec = $(`<div id="html_2767e1b80ffcdf8dae1f469d8309ecec" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>지산재</b><br>         주소: 남구 지산재길 51<br>         구: 남구<br>         목적: 사당<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_5989368cbc24ae9902ad439b6470073b.setContent(html_2767e1b80ffcdf8dae1f469d8309ecec);
+            
+        
+
+        marker_4b80e722f23f741734f1e5348a6d6274.bindPopup(popup_5989368cbc24ae9902ad439b6470073b)
+        ;
+
+        
+    
+    
+                marker_4b80e722f23f741734f1e5348a6d6274.setIcon(icon_e59723c887572ff0301f96acb40af721);
+            
+    
+            var marker_28711332a26059743e7934bc322761c3 = L.marker(
+                [35.0884653, 126.8585893],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_60bb080ea226721d5becd7a97e2ba922 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_663b50c37ee58243aa6fbfc175b5ab2d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_694653f7192b6fd94b663831d5caf62b = $(`<div id="html_694653f7192b6fd94b663831d5caf62b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>양과동정</b><br>         주소: 남구 이장동 266<br>         구: 남구<br>         목적: 정자<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_663b50c37ee58243aa6fbfc175b5ab2d.setContent(html_694653f7192b6fd94b663831d5caf62b);
+            
+        
+
+        marker_28711332a26059743e7934bc322761c3.bindPopup(popup_663b50c37ee58243aa6fbfc175b5ab2d)
+        ;
+
+        
+    
+    
+                marker_28711332a26059743e7934bc322761c3.setIcon(icon_60bb080ea226721d5becd7a97e2ba922);
+            
+    
+            var marker_0279b0e28059af175aa14a740ced0be1 = L.marker(
+                [35.0768873, 126.8273065],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_c681ee1309f6002213968e92b5cedf61 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96d14a6d76917bcd0a0ac90c1fc241d9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_de2b1f995dabacf539e865480f9208fe = $(`<div id="html_de2b1f995dabacf539e865480f9208fe" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>포충사</b><br>         주소: 남구 포충로 767<br>         구: 남구<br>         목적: 사우<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_96d14a6d76917bcd0a0ac90c1fc241d9.setContent(html_de2b1f995dabacf539e865480f9208fe);
+            
+        
+
+        marker_0279b0e28059af175aa14a740ced0be1.bindPopup(popup_96d14a6d76917bcd0a0ac90c1fc241d9)
+        ;
+
+        
+    
+    
+                marker_0279b0e28059af175aa14a740ced0be1.setIcon(icon_c681ee1309f6002213968e92b5cedf61);
+            
+    
+            var marker_dab08b60d3836ad76b7fbf635e1cc69a = L.marker(
+                [35.1649564, 126.9981967],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_2e7e527bde67174cb1eab47ed8867ee6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ebdbe1274a29aca8e60261729a62b78c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2c0c635959edd9ac59f9a0c85eb3086f = $(`<div id="html_2c0c635959edd9ac59f9a0c85eb3086f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>풍암정</b><br>         주소: 북구 풍암제길 117<br>         구: 북구<br>         목적: 정자<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_ebdbe1274a29aca8e60261729a62b78c.setContent(html_2c0c635959edd9ac59f9a0c85eb3086f);
+            
+        
+
+        marker_dab08b60d3836ad76b7fbf635e1cc69a.bindPopup(popup_ebdbe1274a29aca8e60261729a62b78c)
+        ;
+
+        
+    
+    
+                marker_dab08b60d3836ad76b7fbf635e1cc69a.setIcon(icon_2e7e527bde67174cb1eab47ed8867ee6);
+            
+    
+            var marker_21cb590745a86fbdfb77631d378064f5 = L.marker(
+                [35.1837448, 127.0026613],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_de8a9eed074965c60cc5fff2cf229531 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c27f1237b6699ddea96fb3fd7a8c4671 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e45555d7527008d42c083d24aeec2fad = $(`<div id="html_e45555d7527008d42c083d24aeec2fad" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>환벽당</b><br>         주소: 북구 충효동 387-0<br>         구: 북구<br>         목적: 정자<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_c27f1237b6699ddea96fb3fd7a8c4671.setContent(html_e45555d7527008d42c083d24aeec2fad);
+            
+        
+
+        marker_21cb590745a86fbdfb77631d378064f5.bindPopup(popup_c27f1237b6699ddea96fb3fd7a8c4671)
+        ;
+
+        
+    
+    
+                marker_21cb590745a86fbdfb77631d378064f5.setIcon(icon_de8a9eed074965c60cc5fff2cf229531);
+            
+    
+            var marker_eeb7f2ba0e35a35b635b72763cbb4cf3 = L.marker(
+                [35.1565141, 126.9877538],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_8f93db1367543e05f72d10c4abc0946a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f381fe5405980f9e4bb8abcba6db1b0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_843cae33e2ef61288cd79326a8fce8c3 = $(`<div id="html_843cae33e2ef61288cd79326a8fce8c3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>원효사</b><br>         주소: 북구 무등로 1514-35<br>         구: 북구<br>         목적: 사찰<br>         시대: 신라시대     </div>     </div>`)[0];
+                popup_0f381fe5405980f9e4bb8abcba6db1b0.setContent(html_843cae33e2ef61288cd79326a8fce8c3);
+            
+        
+
+        marker_eeb7f2ba0e35a35b635b72763cbb4cf3.bindPopup(popup_0f381fe5405980f9e4bb8abcba6db1b0)
+        ;
+
+        
+    
+    
+                marker_eeb7f2ba0e35a35b635b72763cbb4cf3.setIcon(icon_8f93db1367543e05f72d10c4abc0946a);
+            
+    
+            var marker_868499aaf6fbdcd4917858870da9e3ca = L.marker(
+                [35.1992886, 126.9512285],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_665928ae9653102cdf28bcc66499b994 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_557c094f1f114d0532c46dcafa5a0ed0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_720441672b7df6f4b76570a8a9f8e3b1 = $(`<div id="html_720441672b7df6f4b76570a8a9f8e3b1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>경열사</b><br>         주소: 북구 경열사길 46<br>         구: 북구<br>         목적: 사당<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_557c094f1f114d0532c46dcafa5a0ed0.setContent(html_720441672b7df6f4b76570a8a9f8e3b1);
+            
+        
+
+        marker_868499aaf6fbdcd4917858870da9e3ca.bindPopup(popup_557c094f1f114d0532c46dcafa5a0ed0)
+        ;
+
+        
+    
+    
+                marker_868499aaf6fbdcd4917858870da9e3ca.setIcon(icon_665928ae9653102cdf28bcc66499b994);
+            
+    
+            var marker_03c2e28b30bdd0a71c00316ec2c550d3 = L.marker(
+                [35.1886813, 126.8564352],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_cea679af9951e0101ebc248888c4bf53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3a3f158e5b8eafd71a9fffa11e23d3d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_08b77d3b787a5c62c389e399946c2469 = $(`<div id="html_08b77d3b787a5c62c389e399946c2469" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>풍영정</b><br>         주소: 광산구 풍영정길 21<br>         구: 광산구<br>         목적: 정자<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_a3a3f158e5b8eafd71a9fffa11e23d3d.setContent(html_08b77d3b787a5c62c389e399946c2469);
+            
+        
+
+        marker_03c2e28b30bdd0a71c00316ec2c550d3.bindPopup(popup_a3a3f158e5b8eafd71a9fffa11e23d3d)
+        ;
+
+        
+    
+    
+                marker_03c2e28b30bdd0a71c00316ec2c550d3.setIcon(icon_cea679af9951e0101ebc248888c4bf53);
+            
+    
+            var marker_25f74909824fab4c1417f1e2b0edbe08 = L.marker(
+                [35.0781943, 126.7839988],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ecd056801954dc9ecc3bd4ce1aa6de3b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a9a1eea024e8431d2de41f813be0c47 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_09f815cd3187527240eea9b4aec04cb2 = $(`<div id="html_09f815cd3187527240eea9b4aec04cb2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>호가정</b><br>         주소: 광산구 동곡분토길 195<br>         구: 광산구<br>         목적: 정자<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_2a9a1eea024e8431d2de41f813be0c47.setContent(html_09f815cd3187527240eea9b4aec04cb2);
+            
+        
+
+        marker_25f74909824fab4c1417f1e2b0edbe08.bindPopup(popup_2a9a1eea024e8431d2de41f813be0c47)
+        ;
+
+        
+    
+    
+                marker_25f74909824fab4c1417f1e2b0edbe08.setIcon(icon_ecd056801954dc9ecc3bd4ce1aa6de3b);
+            
+    
+            var marker_4863618947535b8b661d4fb01f5a89be = L.marker(
+                [35.2364117, 126.7413026],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_118dadd91abe3f3ee629d056b6731290 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0115f28d846b9187c9cacccc1ba1825 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e97ec2b096d0d98bad31c47113f40313 = $(`<div id="html_e97ec2b096d0d98bad31c47113f40313" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광산 귀후재</b><br>         주소: 광산구 광곡길 133<br>         구: 광산구<br>         목적: 서당<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_b0115f28d846b9187c9cacccc1ba1825.setContent(html_e97ec2b096d0d98bad31c47113f40313);
+            
+        
+
+        marker_4863618947535b8b661d4fb01f5a89be.bindPopup(popup_b0115f28d846b9187c9cacccc1ba1825)
+        ;
+
+        
+    
+    
+                marker_4863618947535b8b661d4fb01f5a89be.setIcon(icon_118dadd91abe3f3ee629d056b6731290);
+            
+    
+            var marker_4e2323f65a5ebbc052b9fd4698b1566a = L.marker(
+                [35.2364117, 126.7413026],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_e94087ff76027d60557953d619c7858f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c96f6cf6dbb6d44320cde262208d0a94 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6aafdc092547e55d3d9d086ce36e4dda = $(`<div id="html_6aafdc092547e55d3d9d086ce36e4dda" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>칠송정</b><br>         주소: 광산구 광곡길 73<br>         구: 광산구<br>         목적: 정자<br>         시대: 조선시대     </div>     </div>`)[0];
+                popup_c96f6cf6dbb6d44320cde262208d0a94.setContent(html_6aafdc092547e55d3d9d086ce36e4dda);
+            
+        
+
+        marker_4e2323f65a5ebbc052b9fd4698b1566a.bindPopup(popup_c96f6cf6dbb6d44320cde262208d0a94)
+        ;
+
+        
+    
+    
+                marker_4e2323f65a5ebbc052b9fd4698b1566a.setIcon(icon_e94087ff76027d60557953d619c7858f);
+            
+    
+            var marker_eb9c383579796c9c356aecbbf759e574 = L.marker(
+                [35.1425263, 126.928997],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_4841779025b5d445bda852f5cc724386 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0292383d353f98619e77a37dd86cdafe = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c6c9711a5ecc37310331ed692ff2b69e = $(`<div id="html_c6c9711a5ecc37310331ed692ff2b69e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>조선대학교 본관</b><br>         주소: 동구 서석동 375<br>         구: 동구<br>         목적: 교육<br>         시대: 1951년     </div>     </div>`)[0];
+                popup_0292383d353f98619e77a37dd86cdafe.setContent(html_c6c9711a5ecc37310331ed692ff2b69e);
+            
+        
+
+        marker_eb9c383579796c9c356aecbbf759e574.bindPopup(popup_0292383d353f98619e77a37dd86cdafe)
+        ;
+
+        
+    
+    
+                marker_eb9c383579796c9c356aecbbf759e574.setIcon(icon_4841779025b5d445bda852f5cc724386);
+            
+    
+            var marker_71ca13526ce8f18dc6e832cbd3101b73 = L.marker(
+                [35.136278, 126.9261715],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_31593e9cce8eaf782e723a3b4fd48d0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b18e3f9349ef97533fa9413a3c97c7e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_56172bee474485b9c6ff715a4c2a9790 = $(`<div id="html_56172bee474485b9c6ff715a4c2a9790" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>조선대학교 의대 본관</b><br>         주소: 동구 학동 30-1<br>         구: 동구<br>         목적: 교육<br>         시대: 1962년     </div>     </div>`)[0];
+                popup_6b18e3f9349ef97533fa9413a3c97c7e.setContent(html_56172bee474485b9c6ff715a4c2a9790);
+            
+        
+
+        marker_71ca13526ce8f18dc6e832cbd3101b73.bindPopup(popup_6b18e3f9349ef97533fa9413a3c97c7e)
+        ;
+
+        
+    
+    
+                marker_71ca13526ce8f18dc6e832cbd3101b73.setIcon(icon_31593e9cce8eaf782e723a3b4fd48d0f);
+            
+    
+            var marker_fca496e3699bfd99f10d30745865d51c = L.marker(
+                [35.1425263, 126.928997],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_6335e2f6f6ea420573929369cf8a3e6d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9c3eba09f85ed60b0f42f44e216a4b1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b9247637b322401f2957888ab8a5e77e = $(`<div id="html_b9247637b322401f2957888ab8a5e77e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>조선부속중학교 본관</b><br>         주소: 동구 서석동 375<br>         구: 동구<br>         목적: 교육<br>         시대: 1962년     </div>     </div>`)[0];
+                popup_a9c3eba09f85ed60b0f42f44e216a4b1.setContent(html_b9247637b322401f2957888ab8a5e77e);
+            
+        
+
+        marker_fca496e3699bfd99f10d30745865d51c.bindPopup(popup_a9c3eba09f85ed60b0f42f44e216a4b1)
+        ;
+
+        
+    
+    
+                marker_fca496e3699bfd99f10d30745865d51c.setIcon(icon_6335e2f6f6ea420573929369cf8a3e6d);
+            
+    
+            var marker_99b07bf228e10822708609892955ba1f = L.marker(
+                [35.1425263, 126.928997],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_181fa2aad1295e61f46699d44aac71d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5f47123bbbc9ed223afbcb8a203575b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_41e7c2dad8a8e8b705bdd9c19f6ec8da = $(`<div id="html_41e7c2dad8a8e8b705bdd9c19f6ec8da" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>서석초등학교 본관</b><br>         주소: 동구 서석동 14-1<br>         구: 동구<br>         목적: 교육<br>         시대: 일제강점기(1935년)     </div>     </div>`)[0];
+                popup_e5f47123bbbc9ed223afbcb8a203575b.setContent(html_41e7c2dad8a8e8b705bdd9c19f6ec8da);
+            
+        
+
+        marker_99b07bf228e10822708609892955ba1f.bindPopup(popup_e5f47123bbbc9ed223afbcb8a203575b)
+        ;
+
+        
+    
+    
+                marker_99b07bf228e10822708609892955ba1f.setIcon(icon_181fa2aad1295e61f46699d44aac71d0);
+            
+    
+            var marker_d27e5724550a9a3998d4ca1fb0921527 = L.marker(
+                [35.1425263, 126.928997],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_95512c9d51a7b752e50903012a207a8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_075e3cc942b96bd846955b2e6bb2f7e2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7c5b49f56a32d7bd18247a3b2e00b6de = $(`<div id="html_7c5b49f56a32d7bd18247a3b2e00b6de" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>서석초등학교 별관</b><br>         주소: 동구 서석동 14-1<br>         구: 동구<br>         목적: 교육<br>         시대: 일제강점기(1943년)     </div>     </div>`)[0];
+                popup_075e3cc942b96bd846955b2e6bb2f7e2.setContent(html_7c5b49f56a32d7bd18247a3b2e00b6de);
+            
+        
+
+        marker_d27e5724550a9a3998d4ca1fb0921527.bindPopup(popup_075e3cc942b96bd846955b2e6bb2f7e2)
+        ;
+
+        
+    
+    
+                marker_d27e5724550a9a3998d4ca1fb0921527.setIcon(icon_95512c9d51a7b752e50903012a207a8e);
+            
+    
+            var marker_e6279a6e80654ac6984d90e9ac33aba3 = L.marker(
+                [35.1425263, 126.928997],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_5a683a8cec46854e0ecf90c76c057ea0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c945220a5562ba9d72dee4696b9d20e1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6ff4e5bbde090bd298a33c4119e31a26 = $(`<div id="html_6ff4e5bbde090bd298a33c4119e31a26" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>서석초등학교 체육관(서석당)</b><br>         주소: 동구 서석동 14-1<br>         구: 동구<br>         목적: 체육<br>         시대: 일제강점기(1930년)     </div>     </div>`)[0];
+                popup_c945220a5562ba9d72dee4696b9d20e1.setContent(html_6ff4e5bbde090bd298a33c4119e31a26);
+            
+        
+
+        marker_e6279a6e80654ac6984d90e9ac33aba3.bindPopup(popup_c945220a5562ba9d72dee4696b9d20e1)
+        ;
+
+        
+    
+    
+                marker_e6279a6e80654ac6984d90e9ac33aba3.setIcon(icon_5a683a8cec46854e0ecf90c76c057ea0);
+            
+    
+            var marker_956cff786ed418d02a769a137fd3a37c = L.marker(
+                [35.1463888, 126.9195361],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_b71ba7ad511058c3129614ef22961db8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7b4769793754a690183c474b31235c7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_92b5a213d0fee85ff4b2b87903d78b46 = $(`<div id="html_92b5a213d0fee85ff4b2b87903d78b46" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전남도청 본관</b><br>         주소: 동구 광산동 13<br>         구: 동구<br>         목적: 공공<br>         시대: 일제강점기(1925년)     </div>     </div>`)[0];
+                popup_d7b4769793754a690183c474b31235c7.setContent(html_92b5a213d0fee85ff4b2b87903d78b46);
+            
+        
+
+        marker_956cff786ed418d02a769a137fd3a37c.bindPopup(popup_d7b4769793754a690183c474b31235c7)
+        ;
+
+        
+    
+    
+                marker_956cff786ed418d02a769a137fd3a37c.setIcon(icon_b71ba7ad511058c3129614ef22961db8);
+            
+    
+            var marker_5dbbd932efa00904bdf8e023bf38c765 = L.marker(
+                [35.1463888, 126.9195361],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_a5c5f530fb5f105f1ee507800e07c8d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_605bd4d79294d0821c62ef82b9c64d1b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_585513cba54c175775c028fe96f9b6a3 = $(`<div id="html_585513cba54c175775c028fe96f9b6a3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전남도청 회의실</b><br>         주소: 동구 광산동 11<br>         구: 동구<br>         목적: 공공<br>         시대: 일제강점기(1930년)     </div>     </div>`)[0];
+                popup_605bd4d79294d0821c62ef82b9c64d1b.setContent(html_585513cba54c175775c028fe96f9b6a3);
+            
+        
+
+        marker_5dbbd932efa00904bdf8e023bf38c765.bindPopup(popup_605bd4d79294d0821c62ef82b9c64d1b)
+        ;
+
+        
+    
+    
+                marker_5dbbd932efa00904bdf8e023bf38c765.setIcon(icon_a5c5f530fb5f105f1ee507800e07c8d6);
+            
+    
+            var marker_bcddd8410bb8dd4e216f2a9d76ca433e = L.marker(
+                [35.1487432, 126.9233456],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_c1c47e57dadf97d8cc2bb40d0c7b11c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3639b65fdf5969f8b778d9dcac106df = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d060b286bf12b73c5b332feb6eb0e5eb = $(`<div id="html_d060b286bf12b73c5b332feb6eb0e5eb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전남여고 구 본관</b><br>         주소: 동구 장동 39-12<br>         구: 동구<br>         목적: 교육<br>         시대: 일제강점기(1928년)     </div>     </div>`)[0];
+                popup_f3639b65fdf5969f8b778d9dcac106df.setContent(html_d060b286bf12b73c5b332feb6eb0e5eb);
+            
+        
+
+        marker_bcddd8410bb8dd4e216f2a9d76ca433e.bindPopup(popup_f3639b65fdf5969f8b778d9dcac106df)
+        ;
+
+        
+    
+    
+                marker_bcddd8410bb8dd4e216f2a9d76ca433e.setIcon(icon_c1c47e57dadf97d8cc2bb40d0c7b11c1);
+            
+    
+            var marker_25fb107bbdd5860161f976573b949f92 = L.marker(
+                [35.136278, 126.9261715],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_2078a5ed359a93bde08baf59f7bc568e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dd10c2285fe9519ac8942aeef10fe3e3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7f45b74d206bbe27b95de2ae9d1e4152 = $(`<div id="html_7f45b74d206bbe27b95de2ae9d1e4152" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전남대학교 의과대학 구 본관</b><br>         주소: 동구 학동 5<br>         구: 동구<br>         목적: 교육<br>         시대: 1951년     </div>     </div>`)[0];
+                popup_dd10c2285fe9519ac8942aeef10fe3e3.setContent(html_7f45b74d206bbe27b95de2ae9d1e4152);
+            
+        
+
+        marker_25fb107bbdd5860161f976573b949f92.bindPopup(popup_dd10c2285fe9519ac8942aeef10fe3e3)
+        ;
+
+        
+    
+    
+                marker_25fb107bbdd5860161f976573b949f92.setIcon(icon_2078a5ed359a93bde08baf59f7bc568e);
+            
+    
+            var marker_ddd5cd0a560558b42ba65732fde993be = L.marker(
+                [35.1498333, 126.9126038],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_7ae34b22f9564ffe1945841c235f8fcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3d5628cd6230bd01f053581375d886b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a6055d0dec223bf600cdb0009409c097 = $(`<div id="html_a6055d0dec223bf600cdb0009409c097" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주극장</b><br>         주소: 동구 충장로46번길 10<br>         구: 동구<br>         목적: 극장<br>         시대: 1935년     </div>     </div>`)[0];
+                popup_f3d5628cd6230bd01f053581375d886b.setContent(html_a6055d0dec223bf600cdb0009409c097);
+            
+        
+
+        marker_ddd5cd0a560558b42ba65732fde993be.bindPopup(popup_f3d5628cd6230bd01f053581375d886b)
+        ;
+
+        
+    
+    
+                marker_ddd5cd0a560558b42ba65732fde993be.setIcon(icon_7ae34b22f9564ffe1945841c235f8fcb);
+            
+    
+            var marker_c26e625b2977b5ff1dc417b77151216d = L.marker(
+                [35.1491583, 126.9153655],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_d0b678fc1eb4a0dae5a0d1d702fbca65 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7272d79f765088abb28be1dd959377b3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1ea7ee5a9bc8052e7d78bd1c35033afd = $(`<div id="html_1ea7ee5a9bc8052e7d78bd1c35033afd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>신동아극장</b><br>         주소: 동구 충장로 69-7<br>         구: 동구<br>         목적: 극장<br>         시대: 1966년     </div>     </div>`)[0];
+                popup_7272d79f765088abb28be1dd959377b3.setContent(html_1ea7ee5a9bc8052e7d78bd1c35033afd);
+            
+        
+
+        marker_c26e625b2977b5ff1dc417b77151216d.bindPopup(popup_7272d79f765088abb28be1dd959377b3)
+        ;
+
+        
+    
+    
+                marker_c26e625b2977b5ff1dc417b77151216d.setIcon(icon_d0b678fc1eb4a0dae5a0d1d702fbca65);
+            
+    
+            var marker_3d2651955ce827e57f5c8817c9aecd26 = L.marker(
+                [35.1543873, 126.9131118],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_d9091aa049f1d4aba30ec77eef8a30bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53de355436149e382cec5dae253f3904 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c61e18dabce1a9d4c06c7d68e9951bd1 = $(`<div id="html_c61e18dabce1a9d4c06c7d68e9951bd1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>남동성당</b><br>         주소: 동구 제봉로 67<br>         구: 동구<br>         목적: 종교<br>         시대: 1963년     </div>     </div>`)[0];
+                popup_53de355436149e382cec5dae253f3904.setContent(html_c61e18dabce1a9d4c06c7d68e9951bd1);
+            
+        
+
+        marker_3d2651955ce827e57f5c8817c9aecd26.bindPopup(popup_53de355436149e382cec5dae253f3904)
+        ;
+
+        
+    
+    
+                marker_3d2651955ce827e57f5c8817c9aecd26.setIcon(icon_d9091aa049f1d4aba30ec77eef8a30bb);
+            
+    
+            var marker_4b3b0823e074e0ae5c0affd894a70a58 = L.marker(
+                [35.1543873, 126.9131118],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ee1ab98286dc7bf6a2043348c9d49071 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e385efde1995d279b4bea7f5c7f54b91 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_729bbd555953cbb9ff636ab06ae58af5 = $(`<div id="html_729bbd555953cbb9ff636ab06ae58af5" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>중앙초등학교 본관</b><br>         주소: 동구 제봉로 167<br>         구: 동구<br>         목적: 교육<br>         시대: 1933년     </div>     </div>`)[0];
+                popup_e385efde1995d279b4bea7f5c7f54b91.setContent(html_729bbd555953cbb9ff636ab06ae58af5);
+            
+        
+
+        marker_4b3b0823e074e0ae5c0affd894a70a58.bindPopup(popup_e385efde1995d279b4bea7f5c7f54b91)
+        ;
+
+        
+    
+    
+                marker_4b3b0823e074e0ae5c0affd894a70a58.setIcon(icon_ee1ab98286dc7bf6a2043348c9d49071);
+            
+    
+            var marker_88b9225ef61d2ad807523180b06b2833 = L.marker(
+                [35.1209267, 126.8318976],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ccd4907618ae314a4bd4253c419cf108 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af260edb4e7faebde12470b7c285a71b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_53aa136d6a158b0912df356d6c0f926c = $(`<div id="html_53aa136d6a158b0912df356d6c0f926c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>만귀정</b><br>         주소: 서구 세하동 274-1<br>         구: 서구<br>         목적: 정자<br>         시대: 1934년     </div>     </div>`)[0];
+                popup_af260edb4e7faebde12470b7c285a71b.setContent(html_53aa136d6a158b0912df356d6c0f926c);
+            
+        
+
+        marker_88b9225ef61d2ad807523180b06b2833.bindPopup(popup_af260edb4e7faebde12470b7c285a71b)
+        ;
+
+        
+    
+    
+                marker_88b9225ef61d2ad807523180b06b2833.setIcon(icon_ccd4907618ae314a4bd4253c419cf108);
+            
+    
+            var marker_e9b13263a78a23acaa7086e5de1190b3 = L.marker(
+                [35.1404562, 126.8573898],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_b76ba67a8469655e0fb51ca69f0fb24d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a37824dafa55b9d23e1ca68c1b9b393 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6e52f513db8a5d85ed55a6771ab76b95 = $(`<div id="html_6e52f513db8a5d85ed55a6771ab76b95" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>병천사</b><br>         주소: 서구 금호운천길 31<br>         구: 서구<br>         목적: 사당<br>         시대: 일제강점기     </div>     </div>`)[0];
+                popup_3a37824dafa55b9d23e1ca68c1b9b393.setContent(html_6e52f513db8a5d85ed55a6771ab76b95);
+            
+        
+
+        marker_e9b13263a78a23acaa7086e5de1190b3.bindPopup(popup_3a37824dafa55b9d23e1ca68c1b9b393)
+        ;
+
+        
+    
+    
+                marker_e9b13263a78a23acaa7086e5de1190b3.setIcon(icon_b76ba67a8469655e0fb51ca69f0fb24d);
+            
+    
+            var marker_5d8529eda86cb5e1fac33c2d96d3c137 = L.marker(
+                [35.1426688, 126.9148451],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_63ba0f8a512d7cc9e7142894529e5ab3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56cdda674345e705c503c9f19ceb0859 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e9df6bdac4316a0eebd6ee20a9274b0e = $(`<div id="html_e9df6bdac4316a0eebd6ee20a9274b0e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>양파정</b><br>         주소: 남구 사직길 49<br>         구: 남구<br>         목적: 누정<br>         시대: 1914년     </div>     </div>`)[0];
+                popup_56cdda674345e705c503c9f19ceb0859.setContent(html_e9df6bdac4316a0eebd6ee20a9274b0e);
+            
+        
+
+        marker_5d8529eda86cb5e1fac33c2d96d3c137.bindPopup(popup_56cdda674345e705c503c9f19ceb0859)
+        ;
+
+        
+    
+    
+                marker_5d8529eda86cb5e1fac33c2d96d3c137.setIcon(icon_63ba0f8a512d7cc9e7142894529e5ab3);
+            
+    
+            var marker_0b58e5a2a32f4a408f82353e52bdabb8 = L.marker(
+                [35.1441029, 126.911749],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ec4587e5a99068b9f0be89ef56a77b3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b45c60c37da68d7bec8947cfffeba12 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_52f44d657c709651f04fa7358d89ee14 = $(`<div id="html_52f44d657c709651f04fa7358d89ee14" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>최부잣집(청운독서실)</b><br>         주소: 남구 사직안길 19<br>         구: 남구<br>         목적: 주거<br>         시대: 1942년     </div>     </div>`)[0];
+                popup_2b45c60c37da68d7bec8947cfffeba12.setContent(html_52f44d657c709651f04fa7358d89ee14);
+            
+        
+
+        marker_0b58e5a2a32f4a408f82353e52bdabb8.bindPopup(popup_2b45c60c37da68d7bec8947cfffeba12)
+        ;
+
+        
+    
+    
+                marker_0b58e5a2a32f4a408f82353e52bdabb8.setIcon(icon_ec4587e5a99068b9f0be89ef56a77b3a);
+            
+    
+            var marker_33cdb571abdfd614fef23f12eb45a6bb = L.marker(
+                [35.1379541, 126.9158878],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_3b1f87bd7d27702311b8f79e9be2f4bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dd28c698706ac1e198793f2ef2962544 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7cfaf851491a607fb9dfd190cd060988 = $(`<div id="html_7cfaf851491a607fb9dfd190cd060988" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>양림교회</b><br>         주소: 남구 백서로70번길 2<br>         구: 남구<br>         목적: 교회<br>         시대: 1904년     </div>     </div>`)[0];
+                popup_dd28c698706ac1e198793f2ef2962544.setContent(html_7cfaf851491a607fb9dfd190cd060988);
+            
+        
+
+        marker_33cdb571abdfd614fef23f12eb45a6bb.bindPopup(popup_dd28c698706ac1e198793f2ef2962544)
+        ;
+
+        
+    
+    
+                marker_33cdb571abdfd614fef23f12eb45a6bb.setIcon(icon_3b1f87bd7d27702311b8f79e9be2f4bd);
+            
+    
+            var marker_011fc2af927514125d3205196626c869 = L.marker(
+                [35.13835, 126.91441],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_511e952d745dc00bc3806a2eecedaffe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0074edec56f783e13f621ce4a0115f49 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_acbe7765abeb69e6bdf98a1ed019be31 = $(`<div id="html_acbe7765abeb69e6bdf98a1ed019be31" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>오웬기념각</b><br>         주소: 남구 양림동 67-1<br>         구: 남구<br>         목적: 문화 및 집회<br>         시대: 일제강점기(1914년)     </div>     </div>`)[0];
+                popup_0074edec56f783e13f621ce4a0115f49.setContent(html_acbe7765abeb69e6bdf98a1ed019be31);
+            
+        
+
+        marker_011fc2af927514125d3205196626c869.bindPopup(popup_0074edec56f783e13f621ce4a0115f49)
+        ;
+
+        
+    
+    
+                marker_011fc2af927514125d3205196626c869.setIcon(icon_511e952d745dc00bc3806a2eecedaffe);
+            
+    
+            var marker_2f3f11da745026086198beb094b83a78 = L.marker(
+                [35.13835, 126.91441],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ff5004f9c32db973c1aaad89238c495e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3a2599b3219cbf5219a1cfb5c96067d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_49f9d75ee9bda8e38b0d5814d89e5f1c = $(`<div id="html_49f9d75ee9bda8e38b0d5814d89e5f1c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>우일선 선교사 사택</b><br>         주소: 남구 양림동 226-25<br>         구: 남구<br>         목적: 주거<br>         시대: 일제강점기(1920년)     </div>     </div>`)[0];
+                popup_a3a2599b3219cbf5219a1cfb5c96067d.setContent(html_49f9d75ee9bda8e38b0d5814d89e5f1c);
+            
+        
+
+        marker_2f3f11da745026086198beb094b83a78.bindPopup(popup_a3a2599b3219cbf5219a1cfb5c96067d)
+        ;
+
+        
+    
+    
+                marker_2f3f11da745026086198beb094b83a78.setIcon(icon_ff5004f9c32db973c1aaad89238c495e);
+            
+    
+            var marker_3173cb71cf47a1d96cdbac522e10b9a7 = L.marker(
+                [35.13835, 126.91441],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_b138fcb1286f8af623103f111973966b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9354fb890f5c35c7faa7d1d17fcb0c95 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a96dbb9b009b1a1ca2a323fb97f6063c = $(`<div id="html_a96dbb9b009b1a1ca2a323fb97f6063c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>구 수피아여학교 커티스메모리얼홀(유진벨기념관)</b><br>         주소: 남구 양림동 256<br>         구: 남구<br>         목적: 문화 및 집회<br>         시대: 일제강점기(1920년)     </div>     </div>`)[0];
+                popup_9354fb890f5c35c7faa7d1d17fcb0c95.setContent(html_a96dbb9b009b1a1ca2a323fb97f6063c);
+            
+        
+
+        marker_3173cb71cf47a1d96cdbac522e10b9a7.bindPopup(popup_9354fb890f5c35c7faa7d1d17fcb0c95)
+        ;
+
+        
+    
+    
+                marker_3173cb71cf47a1d96cdbac522e10b9a7.setIcon(icon_b138fcb1286f8af623103f111973966b);
+            
+    
+            var marker_c96b4f1e08f5fb87ee51cce2c95d9c19 = L.marker(
+                [35.1356429, 126.9108789],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_8c8d3f67542b8564f4a94dbfc8d6c77a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e3133929c207c827d434fa1a012c4459 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cc94267373b2ff208f444b4a3e64d7c3 = $(`<div id="html_cc94267373b2ff208f444b4a3e64d7c3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>구 수피아여학교 수피아 홀</b><br>         주소: 남구 양림로 251<br>         구: 남구<br>         목적: 교육<br>         시대: 일제강점기(1911년)     </div>     </div>`)[0];
+                popup_e3133929c207c827d434fa1a012c4459.setContent(html_cc94267373b2ff208f444b4a3e64d7c3);
+            
+        
+
+        marker_c96b4f1e08f5fb87ee51cce2c95d9c19.bindPopup(popup_e3133929c207c827d434fa1a012c4459)
+        ;
+
+        
+    
+    
+                marker_c96b4f1e08f5fb87ee51cce2c95d9c19.setIcon(icon_8c8d3f67542b8564f4a94dbfc8d6c77a);
+            
+    
+            var marker_dc253457b676c0cb5f127c0beb5a4d3b = L.marker(
+                [35.1356429, 126.9108789],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_557cea727fdaeb1b01763dd026d241f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82e9544a7fe82f52916ec302243287fd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_02e5565783b8c1f8a1934a4a92ddb0eb = $(`<div id="html_02e5565783b8c1f8a1934a4a92ddb0eb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>구 수피아여학교 원스브로우 홀</b><br>         주소: 남구 양림로 256<br>         구: 남구<br>         목적: 교육<br>         시대: 일제강점기(1927년)     </div>     </div>`)[0];
+                popup_82e9544a7fe82f52916ec302243287fd.setContent(html_02e5565783b8c1f8a1934a4a92ddb0eb);
+            
+        
+
+        marker_dc253457b676c0cb5f127c0beb5a4d3b.bindPopup(popup_82e9544a7fe82f52916ec302243287fd)
+        ;
+
+        
+    
+    
+                marker_dc253457b676c0cb5f127c0beb5a4d3b.setIcon(icon_557cea727fdaeb1b01763dd026d241f4);
+            
+    
+            var marker_2f4784ed8ac4c712a397934a603a6417 = L.marker(
+                [35.13835, 126.91441],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_5feff1f7ac7636149006b52c622b3bcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_304a8c6a6da6ea4c024144c0fc439bf7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7f451e5a4f6fa80e1e8f90abf2337a10 = $(`<div id="html_7f451e5a4f6fa80e1e8f90abf2337a10" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>수피아여학교 소강당</b><br>         주소: 남구 양림동 242<br>         구: 남구<br>         목적: 체육<br>         시대: 일제강점기(1935년)     </div>     </div>`)[0];
+                popup_304a8c6a6da6ea4c024144c0fc439bf7.setContent(html_7f451e5a4f6fa80e1e8f90abf2337a10);
+            
+        
+
+        marker_2f4784ed8ac4c712a397934a603a6417.bindPopup(popup_304a8c6a6da6ea4c024144c0fc439bf7)
+        ;
+
+        
+    
+    
+                marker_2f4784ed8ac4c712a397934a603a6417.setIcon(icon_5feff1f7ac7636149006b52c622b3bcb);
+            
+    
+            var marker_c57b968e4da1c939825f352be1e68520 = L.marker(
+                [35.1369981, 126.9082986],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_dd9f0689fe2cc0a4e25062bc82045783 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be4c25ef317dd85a6ef926941f360de9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a71c94c2f6d7004ff0b62967a8a46a6d = $(`<div id="html_a71c94c2f6d7004ff0b62967a8a46a6d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>이장우 가옥</b><br>         주소: 남구 양림로 128<br>         구: 남구<br>         목적: 주거<br>         시대: 1899년     </div>     </div>`)[0];
+                popup_be4c25ef317dd85a6ef926941f360de9.setContent(html_a71c94c2f6d7004ff0b62967a8a46a6d);
+            
+        
+
+        marker_c57b968e4da1c939825f352be1e68520.bindPopup(popup_be4c25ef317dd85a6ef926941f360de9)
+        ;
+
+        
+    
+    
+                marker_c57b968e4da1c939825f352be1e68520.setIcon(icon_dd9f0689fe2cc0a4e25062bc82045783);
+            
+    
+            var marker_fce94c4890b29d5b266fbc1e2570b53b = L.marker(
+                [35.0918633, 126.8326125],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_3274d4fd0db1bd06bb845fcb16e3b717 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_625cfbb0d5eec52690c6bae6408345d1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3bf7994966c85d2b7fc9b87a3aa6b060 = $(`<div id="html_3bf7994966c85d2b7fc9b87a3aa6b060" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>고원희 가옥</b><br>         주소: 남구 압촌동 101-1<br>         구: 남구<br>         목적: 주거<br>         시대: 1917년     </div>     </div>`)[0];
+                popup_625cfbb0d5eec52690c6bae6408345d1.setContent(html_3bf7994966c85d2b7fc9b87a3aa6b060);
+            
+        
+
+        marker_fce94c4890b29d5b266fbc1e2570b53b.bindPopup(popup_625cfbb0d5eec52690c6bae6408345d1)
+        ;
+
+        
+    
+    
+                marker_fce94c4890b29d5b266fbc1e2570b53b.setIcon(icon_3274d4fd0db1bd06bb845fcb16e3b717);
+            
+    
+            var marker_0fb202bff9096468230a2b3462dd6977 = L.marker(
+                [35.13835, 126.91441],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_38e1e67f101007f208d9bb146f4e6757 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f9ee578609f801bd1a83ff87cfef0d5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ec5d32139979083d9e5a5d7a3af07fde = $(`<div id="html_ec5d32139979083d9e5a5d7a3af07fde" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>최승효 가옥</b><br>         주소: 남구 양림동 226-25<br>         구: 남구<br>         목적: 주거<br>         시대: 1920년     </div>     </div>`)[0];
+                popup_7f9ee578609f801bd1a83ff87cfef0d5.setContent(html_ec5d32139979083d9e5a5d7a3af07fde);
+            
+        
+
+        marker_0fb202bff9096468230a2b3462dd6977.bindPopup(popup_7f9ee578609f801bd1a83ff87cfef0d5)
+        ;
+
+        
+    
+    
+                marker_0fb202bff9096468230a2b3462dd6977.setIcon(icon_38e1e67f101007f208d9bb146f4e6757);
+            
+    
+            var marker_20aab525cf66bb4f1fe02f3769ea9c84 = L.marker(
+                [35.1647214, 126.9266568],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_d2442aec22100221e1ed385e6778dd0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_921a9bac1f7329035df3d20ea41ec17e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9b6e591f71fbac4f9e69ff6def535a13 = $(`<div id="html_9b6e591f71fbac4f9e69ff6def535a13" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주교육대학교 본관</b><br>         주소: 북구 풍향동 1-1<br>         구: 북구<br>         목적: 교육<br>         시대: 일제강점기(1939년)     </div>     </div>`)[0];
+                popup_921a9bac1f7329035df3d20ea41ec17e.setContent(html_9b6e591f71fbac4f9e69ff6def535a13);
+            
+        
+
+        marker_20aab525cf66bb4f1fe02f3769ea9c84.bindPopup(popup_921a9bac1f7329035df3d20ea41ec17e)
+        ;
+
+        
+    
+    
+                marker_20aab525cf66bb4f1fe02f3769ea9c84.setIcon(icon_d2442aec22100221e1ed385e6778dd0f);
+            
+    
+            var marker_58bc86cc40c5e972afc836422a25f422 = L.marker(
+                [35.1558233, 126.9096688],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_a9066e7efc632e2abad06bc1994d8f37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df05609858fe1667b864fd106c9aeaf1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_620742c0c7cbd18fcd4466aecc4e32f0 = $(`<div id="html_620742c0c7cbd18fcd4466aecc4e32f0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>북동천주교회 사제관</b><br>         주소: 북구 북동 33<br>         구: 북구<br>         목적: 종교<br>         시대: 일제강점기(1938년)     </div>     </div>`)[0];
+                popup_df05609858fe1667b864fd106c9aeaf1.setContent(html_620742c0c7cbd18fcd4466aecc4e32f0);
+            
+        
+
+        marker_58bc86cc40c5e972afc836422a25f422.bindPopup(popup_df05609858fe1667b864fd106c9aeaf1)
+        ;
+
+        
+    
+    
+                marker_58bc86cc40c5e972afc836422a25f422.setIcon(icon_a9066e7efc632e2abad06bc1994d8f37);
+            
+    
+            var marker_7e22d9a7787957dde5dc5d7cadbfd91d = L.marker(
+                [35.1794701, 126.901333],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_3a06d5023b7b5497e7fe3d45d073efa0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1141db613a7a4ce5be72975dab5bc82 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2044bcafe76fb408a57a2099ae60503c = $(`<div id="html_2044bcafe76fb408a57a2099ae60503c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전남대학교 인문대 1호관</b><br>         주소: 북구 용봉동 300<br>         구: 북구<br>         목적: 교육<br>         시대: 1955년     </div>     </div>`)[0];
+                popup_b1141db613a7a4ce5be72975dab5bc82.setContent(html_2044bcafe76fb408a57a2099ae60503c);
+            
+        
+
+        marker_7e22d9a7787957dde5dc5d7cadbfd91d.bindPopup(popup_b1141db613a7a4ce5be72975dab5bc82)
+        ;
+
+        
+    
+    
+                marker_7e22d9a7787957dde5dc5d7cadbfd91d.setIcon(icon_3a06d5023b7b5497e7fe3d45d073efa0);
+            
+    
+            var marker_5fa389325091711eac5100d9c9df5aff = L.marker(
+                [35.1647214, 126.9266568],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_a2eccc58939a51a26892ae60ee2d25a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f07afc401c25344c349bf45c84415c95 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_15fb945c7c23b51c2203dbc1b82b90f7 = $(`<div id="html_15fb945c7c23b51c2203dbc1b82b90f7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주교대 교육연수원 (교육박물관)</b><br>         주소: 북구 풍향동 1-1<br>         구: 북구<br>         목적: 교육<br>         시대: 1957년     </div>     </div>`)[0];
+                popup_f07afc401c25344c349bf45c84415c95.setContent(html_15fb945c7c23b51c2203dbc1b82b90f7);
+            
+        
+
+        marker_5fa389325091711eac5100d9c9df5aff.bindPopup(popup_f07afc401c25344c349bf45c84415c95)
+        ;
+
+        
+    
+    
+                marker_5fa389325091711eac5100d9c9df5aff.setIcon(icon_a2eccc58939a51a26892ae60ee2d25a8);
+            
+    
+            var marker_03359ed232135aff8e91aad4a4fcee9f = L.marker(
+                [35.1911482, 126.8907889],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_a91f1fa4dfb622c8e8a36a64ae98109b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8e56067870e1fa819922a7096bdee90 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5f5921c3e7db7e8d694cd0c18fbffc6b = $(`<div id="html_5f5921c3e7db7e8d694cd0c18fbffc6b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>김용학 가옥</b><br>         주소: 북구 매곡동 306<br>         구: 북구<br>         목적: 주거<br>         시대: 1900년대     </div>     </div>`)[0];
+                popup_c8e56067870e1fa819922a7096bdee90.setContent(html_5f5921c3e7db7e8d694cd0c18fbffc6b);
+            
+        
+
+        marker_03359ed232135aff8e91aad4a4fcee9f.bindPopup(popup_c8e56067870e1fa819922a7096bdee90)
+        ;
+
+        
+    
+    
+                marker_03359ed232135aff8e91aad4a4fcee9f.setIcon(icon_a91f1fa4dfb622c8e8a36a64ae98109b);
+            
+    
+            var marker_08df1147a2cf5b6b1930c548fedc04da = L.marker(
+                [35.2119757, 126.8928772],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_f54b2d76e5c47658db8e71cec84d50be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee559a2d600844edb5a522f3bedc4f46 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3d76fe7752024852b19c293739808400 = $(`<div id="html_3d76fe7752024852b19c293739808400" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>경의재</b><br>         주소: 북구 소해로 11<br>         구: 북구<br>         목적: 교육<br>         시대: 일제강점기     </div>     </div>`)[0];
+                popup_ee559a2d600844edb5a522f3bedc4f46.setContent(html_3d76fe7752024852b19c293739808400);
+            
+        
+
+        marker_08df1147a2cf5b6b1930c548fedc04da.bindPopup(popup_ee559a2d600844edb5a522f3bedc4f46)
+        ;
+
+        
+    
+    
+                marker_08df1147a2cf5b6b1930c548fedc04da.setIcon(icon_f54b2d76e5c47658db8e71cec84d50be);
+            
+    
+            var marker_5ec5fa0ea54abee503383b44d4fe5533 = L.marker(
+                [35.1848709, 127.0053589],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_195413d026276103c90e732a62e69c4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1883f5245d660bc9ff23ddec8eabee0d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_252e6a612735b3d0bb039b92dfac1dce = $(`<div id="html_252e6a612735b3d0bb039b92dfac1dce" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>취가정</b><br>         주소: 북구 환벽당길 42-2<br>         구: 북구<br>         목적: 정자<br>         시대: 1890년     </div>     </div>`)[0];
+                popup_1883f5245d660bc9ff23ddec8eabee0d.setContent(html_252e6a612735b3d0bb039b92dfac1dce);
+            
+        
+
+        marker_5ec5fa0ea54abee503383b44d4fe5533.bindPopup(popup_1883f5245d660bc9ff23ddec8eabee0d)
+        ;
+
+        
+    
+    
+                marker_5ec5fa0ea54abee503383b44d4fe5533.setIcon(icon_195413d026276103c90e732a62e69c4e);
+            
+    
+            var marker_6cdb2df786dde8d671c9eed3c4f6bcae = L.marker(
+                [35.1598496, 126.8975546],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_f308b03d9f2ab28c559f7d4eadc0d495 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36d2410edf96b48d2607dedd1a372ec3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9b9d5a1135c6c13a352cece9a07f7741 = $(`<div id="html_9b9d5a1135c6c13a352cece9a07f7741" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>수창초등학교 본관</b><br>         주소: 북구 금남로 99<br>         구: 북구<br>         목적: 교육<br>         시대: 1931년     </div>     </div>`)[0];
+                popup_36d2410edf96b48d2607dedd1a372ec3.setContent(html_9b9d5a1135c6c13a352cece9a07f7741);
+            
+        
+
+        marker_6cdb2df786dde8d671c9eed3c4f6bcae.bindPopup(popup_36d2410edf96b48d2607dedd1a372ec3)
+        ;
+
+        
+    
+    
+                marker_6cdb2df786dde8d671c9eed3c4f6bcae.setIcon(icon_f308b03d9f2ab28c559f7d4eadc0d495);
+            
+    
+            var marker_ce09fe57ebb8436139b87c6f6c0f335a = L.marker(
+                [35.1928191, 126.7973211],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ce4d446be12f3c0681f8f6bacf039c97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a66d144d8fee60633a547a8381f35cad = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2d4a516017c82d1a06a2f979f7069852 = $(`<div id="html_2d4a516017c82d1a06a2f979f7069852" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>김봉호 가옥</b><br>         주소: 광산구 하남동 69<br>         구: 광산구<br>         목적: 주거<br>         시대: 1946대     </div>     </div>`)[0];
+                popup_a66d144d8fee60633a547a8381f35cad.setContent(html_2d4a516017c82d1a06a2f979f7069852);
+            
+        
+
+        marker_ce09fe57ebb8436139b87c6f6c0f335a.bindPopup(popup_a66d144d8fee60633a547a8381f35cad)
+        ;
+
+        
+    
+    
+                marker_ce09fe57ebb8436139b87c6f6c0f335a.setIcon(icon_ce4d446be12f3c0681f8f6bacf039c97);
+            
+    
+            var marker_2613f4e43d95de2354597913c45d267a = L.marker(
+                [35.2068489, 126.7001373],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_c294caa3b250a3d787c0344ca81a043f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbb8af23c58d11d2d695589fdd527800 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d73140ed66f7b3f61adffe49b4328083 = $(`<div id="html_d73140ed66f7b3f61adffe49b4328083" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>용진정사</b><br>         주소: 광산구 본량동서로 180-68<br>         구: 광산구<br>         목적: 교육<br>         시대: 일제강점기     </div>     </div>`)[0];
+                popup_dbb8af23c58d11d2d695589fdd527800.setContent(html_d73140ed66f7b3f61adffe49b4328083);
+            
+        
+
+        marker_2613f4e43d95de2354597913c45d267a.bindPopup(popup_dbb8af23c58d11d2d695589fdd527800)
+        ;
+
+        
+    
+    
+                marker_2613f4e43d95de2354597913c45d267a.setIcon(icon_c294caa3b250a3d787c0344ca81a043f);
+            
+    
+            var marker_324c3e2495654f835376a2cf450c5af4 = L.marker(
+                [35.2364117, 126.7413026],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_30575fa27a5c7bec3b5bc448374c0f1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e3249de9cad4ce101ff47b0eac9c9b7f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a8632adaad7064b0e83e48925e19eab0 = $(`<div id="html_a8632adaad7064b0e83e48925e19eab0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>월봉서원 빙월당</b><br>         주소: 광산구 광곡길 133<br>         구: 광산구<br>         목적: 서원<br>         시대: 1941년     </div>     </div>`)[0];
+                popup_e3249de9cad4ce101ff47b0eac9c9b7f.setContent(html_a8632adaad7064b0e83e48925e19eab0);
+            
+        
+
+        marker_324c3e2495654f835376a2cf450c5af4.bindPopup(popup_e3249de9cad4ce101ff47b0eac9c9b7f)
+        ;
+
+        
+    
+    
+                marker_324c3e2495654f835376a2cf450c5af4.setIcon(icon_30575fa27a5c7bec3b5bc448374c0f1e);
+            
+    
+            var marker_b701b24d3150053d22743329d5d9466d = L.marker(
+                [35.1496955, 126.7947656],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_e7127d408b5a043ce7cb0fabdf7586fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d70e9f0ce9e2ef3673f4f14920ba983e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f6c2071fd2db0a2798168b742b36ff09 = $(`<div id="html_f6c2071fd2db0a2798168b742b36ff09" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>용아생가</b><br>         주소: 광산구 소촌로46번길 24<br>         구: 광산구<br>         목적: 주거<br>         시대: 19세기 후반     </div>     </div>`)[0];
+                popup_d70e9f0ce9e2ef3673f4f14920ba983e.setContent(html_f6c2071fd2db0a2798168b742b36ff09);
+            
+        
+
+        marker_b701b24d3150053d22743329d5d9466d.bindPopup(popup_d70e9f0ce9e2ef3673f4f14920ba983e)
+        ;
+
+        
+    
+    
+                marker_b701b24d3150053d22743329d5d9466d.setIcon(icon_e7127d408b5a043ce7cb0fabdf7586fa);
+            
+    
+            var marker_2795102a7b2456a86554c1fe77cace91 = L.marker(
+                [35.210165, 126.8395691],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_b8451502312df4fb84067b42d89e0ef6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8834afa1636334c8f4d464b660ad5075 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a48a7fa0735befea3d7dbb407f395f7e = $(`<div id="html_a48a7fa0735befea3d7dbb407f395f7e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>무양서원</b><br>         주소: 광산구 산월로21번길 26<br>         구: 광산구<br>         목적: 서원<br>         시대: 1927년     </div>     </div>`)[0];
+                popup_8834afa1636334c8f4d464b660ad5075.setContent(html_a48a7fa0735befea3d7dbb407f395f7e);
+            
+        
+
+        marker_2795102a7b2456a86554c1fe77cace91.bindPopup(popup_8834afa1636334c8f4d464b660ad5075)
+        ;
+
+        
+    
+    
+                marker_2795102a7b2456a86554c1fe77cace91.setIcon(icon_b8451502312df4fb84067b42d89e0ef6);
+            
+    
+            var marker_6d98a1a98270018a67a16a748cbaf234 = L.marker(
+                [35.1744775, 126.8040819],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_258ae71c3a4fb103e0040e402475a2ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f3ad46d7a77e456b425ed61c9083ffc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_faf67802877cd8ee2089a1cb4fa81d66 = $(`<div id="html_faf67802877cd8ee2089a1cb4fa81d66" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>경장각</b><br>         주소: 광산구 용아로 460<br>         구: 광산구<br>         목적: 사당<br>         시대: 1919년     </div>     </div>`)[0];
+                popup_6f3ad46d7a77e456b425ed61c9083ffc.setContent(html_faf67802877cd8ee2089a1cb4fa81d66);
+            
+        
+
+        marker_6d98a1a98270018a67a16a748cbaf234.bindPopup(popup_6f3ad46d7a77e456b425ed61c9083ffc)
+        ;
+
+        
+    
+    
+                marker_6d98a1a98270018a67a16a748cbaf234.setIcon(icon_258ae71c3a4fb103e0040e402475a2ff);
+            
+    
+            var marker_ec1c189dc843235ffb4c698d000fcd2d = L.marker(
+                [35.1472744, 126.9208083],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_fe2d5b22dc877088306c2b650566836c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_795337d795eae3cef71caabd355e6e68 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_88ada341ed5dab2efe8efd28d8347775 = $(`<div id="html_88ada341ed5dab2efe8efd28d8347775" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>국립아시아문화전당</b><br>         주소: 동구 문화전당로 38<br>         구: 동구<br>         목적: 문화 및 집회시설<br>         시대: 2015년 개관     </div>     </div>`)[0];
+                popup_795337d795eae3cef71caabd355e6e68.setContent(html_88ada341ed5dab2efe8efd28d8347775);
+            
+        
+
+        marker_ec1c189dc843235ffb4c698d000fcd2d.bindPopup(popup_795337d795eae3cef71caabd355e6e68)
+        ;
+
+        
+    
+    
+                marker_ec1c189dc843235ffb4c698d000fcd2d.setIcon(icon_fe2d5b22dc877088306c2b650566836c);
+            
+    
+            var marker_de952e2053c6f6ce18b7068ad5a5e354 = L.marker(
+                [35.1343917, 126.9529991],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_e598d50e16075f0c4d8bc8d503861b46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_98134b2ff34e44627f3bdd2414732254 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eaec86bd585d70593031be6a35dfae33 = $(`<div id="html_eaec86bd585d70593031be6a35dfae33" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>드영미술관</b><br>         주소: 동구 성촌길 6<br>         구: 동구<br>         목적: 문화 및 집회시설<br>         시대: 2018년 개관     </div>     </div>`)[0];
+                popup_98134b2ff34e44627f3bdd2414732254.setContent(html_eaec86bd585d70593031be6a35dfae33);
+            
+        
+
+        marker_de952e2053c6f6ce18b7068ad5a5e354.bindPopup(popup_98134b2ff34e44627f3bdd2414732254)
+        ;
+
+        
+    
+    
+                marker_de952e2053c6f6ce18b7068ad5a5e354.setIcon(icon_e598d50e16075f0c4d8bc8d503861b46);
+            
+    
+            var marker_1fc76e2d1b2543ee2addc13bd3929b73 = L.marker(
+                [35.1501198, 126.9262657],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_6f2f0e59813e11596b11e9d5d0e55fcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d9649199be3df44b3b9877971103008 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e0581038c4fa38a5e18142576e4d7ec7 = $(`<div id="html_e0581038c4fa38a5e18142576e4d7ec7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>라티스빌딩</b><br>         주소: 동구 동명로14번길 14<br>         구: 동구<br>         목적: 근린생활시설<br>         시대: 2017년 개관     </div>     </div>`)[0];
+                popup_3d9649199be3df44b3b9877971103008.setContent(html_e0581038c4fa38a5e18142576e4d7ec7);
+            
+        
+
+        marker_1fc76e2d1b2543ee2addc13bd3929b73.bindPopup(popup_3d9649199be3df44b3b9877971103008)
+        ;
+
+        
+    
+    
+                marker_1fc76e2d1b2543ee2addc13bd3929b73.setIcon(icon_6f2f0e59813e11596b11e9d5d0e55fcd);
+            
+    
+            var marker_47c2928af6ba81ad164ced43dc366990 = L.marker(
+                [35.1483983, 126.9186469],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_2cfcb5caf1d7e7df5b58a57f944fe403 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_93358bbd614d3f0f2940c4fe98114c41 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_35566f891d5f51f41f1229880d6ad295 = $(`<div id="html_35566f891d5f51f41f1229880d6ad295" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전일빌딩245</b><br>         주소: 동구 금남로 245<br>         구: 동구<br>         목적: 문화 및 집회시설<br>         시대: 1968년 1차 준공, 1970년 2차 증축, 2020년 리모델링     </div>     </div>`)[0];
+                popup_93358bbd614d3f0f2940c4fe98114c41.setContent(html_35566f891d5f51f41f1229880d6ad295);
+            
+        
+
+        marker_47c2928af6ba81ad164ced43dc366990.bindPopup(popup_93358bbd614d3f0f2940c4fe98114c41)
+        ;
+
+        
+    
+    
+                marker_47c2928af6ba81ad164ced43dc366990.setIcon(icon_2cfcb5caf1d7e7df5b58a57f944fe403);
+            
+    
+            var marker_176a3d8941323f38c555e0a68571c645 = L.marker(
+                [35.1501851, 126.935024],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_846d252a2ae85ff0b1815c3afcc1b216 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ddab0b2dbaf9ab61280183851f5c4e9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b0e1442cce11f09166169a26b458a750 = $(`<div id="html_b0e1442cce11f09166169a26b458a750" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>지산돌집</b><br>         주소: 동구 지산동<br>         구: 동구<br>         목적: 단독주택<br>         시대: 2022년     </div>     </div>`)[0];
+                popup_8ddab0b2dbaf9ab61280183851f5c4e9.setContent(html_b0e1442cce11f09166169a26b458a750);
+            
+        
+
+        marker_176a3d8941323f38c555e0a68571c645.bindPopup(popup_8ddab0b2dbaf9ab61280183851f5c4e9)
+        ;
+
+        
+    
+    
+                marker_176a3d8941323f38c555e0a68571c645.setIcon(icon_846d252a2ae85ff0b1815c3afcc1b216);
+            
+    
+            var marker_4bb6bad81825f0fdf3b75e91f7a2c0d4 = L.marker(
+                [35.1326322, 126.943301],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_bfe2c22f02997304f2deae3ebe4569e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b69a62aeca7936c8aba10756d3ee685 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3a4dc53ef7fe98a748f7eaa3b70dcd06 = $(`<div id="html_3a4dc53ef7fe98a748f7eaa3b70dcd06" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>미가온주택</b><br>         주소: 동구 운림동<br>         구: 동구<br>         목적: 단독주택<br>         시대: 2013년 준공     </div>     </div>`)[0];
+                popup_9b69a62aeca7936c8aba10756d3ee685.setContent(html_3a4dc53ef7fe98a748f7eaa3b70dcd06);
+            
+        
+
+        marker_4bb6bad81825f0fdf3b75e91f7a2c0d4.bindPopup(popup_9b69a62aeca7936c8aba10756d3ee685)
+        ;
+
+        
+    
+    
+                marker_4bb6bad81825f0fdf3b75e91f7a2c0d4.setIcon(icon_bfe2c22f02997304f2deae3ebe4569e7);
+            
+    
+            var marker_0c606a173dd9a7554133ba8d5bc0fd9e = L.marker(
+                [35.1543873, 126.9131118],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_f300b71ab1870fb45311d7ce02fa0809 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b2c40f7a4453c41b9ccea7a5a302aff = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f881e9c2cae38d8628448e23ff21b357 = $(`<div id="html_f881e9c2cae38d8628448e23ff21b357" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>영상복합문화관</b><br>         주소: 동구 제봉로 96<br>         구: 동구<br>         목적: 문화 및 집회시설<br>         시대: 2010년 개관     </div>     </div>`)[0];
+                popup_0b2c40f7a4453c41b9ccea7a5a302aff.setContent(html_f881e9c2cae38d8628448e23ff21b357);
+            
+        
+
+        marker_0c606a173dd9a7554133ba8d5bc0fd9e.bindPopup(popup_0b2c40f7a4453c41b9ccea7a5a302aff)
+        ;
+
+        
+    
+    
+                marker_0c606a173dd9a7554133ba8d5bc0fd9e.setIcon(icon_f300b71ab1870fb45311d7ce02fa0809);
+            
+    
+            var marker_4bc4762ea2dd7528f28f89ec53ebaec8 = L.marker(
+                [35.1324141, 126.9615604],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_8cefaa9ffb4d19c5c71a102fa032877a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16f6cd5e531df22e0603c50308d8a075 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7bbdee7a106f0d27d8c12f8a37836c68 = $(`<div id="html_7bbdee7a106f0d27d8c12f8a37836c68" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>의재미술관</b><br>         주소: 동구 증심사길 155<br>         구: 동구<br>         목적: 문화 및 집회시설<br>         시대: 2001년 개관     </div>     </div>`)[0];
+                popup_16f6cd5e531df22e0603c50308d8a075.setContent(html_7bbdee7a106f0d27d8c12f8a37836c68);
+            
+        
+
+        marker_4bc4762ea2dd7528f28f89ec53ebaec8.bindPopup(popup_16f6cd5e531df22e0603c50308d8a075)
+        ;
+
+        
+    
+    
+                marker_4bc4762ea2dd7528f28f89ec53ebaec8.setIcon(icon_8cefaa9ffb4d19c5c71a102fa032877a);
+            
+    
+            var marker_150cddf946de4c4cd3295d631e3604af = L.marker(
+                [35.1394176, 126.922827],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_eef01f8a2208584530949526ed78109d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07f474169bdf9d7c1ac711d810d33fc7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f10030a7b7c294f2c290e6a60859c5e3 = $(`<div id="html_f10030a7b7c294f2c290e6a60859c5e3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주은행 학동지점</b><br>         주소: 동구 남문로 698<br>         구: 동구<br>         목적: 업무시설<br>         시대: 1995년 개관     </div>     </div>`)[0];
+                popup_07f474169bdf9d7c1ac711d810d33fc7.setContent(html_f10030a7b7c294f2c290e6a60859c5e3);
+            
+        
+
+        marker_150cddf946de4c4cd3295d631e3604af.bindPopup(popup_07f474169bdf9d7c1ac711d810d33fc7)
+        ;
+
+        
+    
+    
+                marker_150cddf946de4c4cd3295d631e3604af.setIcon(icon_eef01f8a2208584530949526ed78109d);
+            
+    
+            var marker_004d5b0dc771282a7b5b935d78d6a171 = L.marker(
+                [35.1505437, 126.9232508],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_954dc3de054b43c72a58dfc7b0ed5b9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c680748edd6ac3755adc997d90379222 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f22c5e1a70a17ba587d85ceb93ac027b = $(`<div id="html_f22c5e1a70a17ba587d85ceb93ac027b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>Bldg. REGAON</b><br>         주소: 동구 동명로 57<br>         구: 동구<br>         목적: 업무시설<br>         시대: 2013년 개관, 2019년 이전     </div>     </div>`)[0];
+                popup_c680748edd6ac3755adc997d90379222.setContent(html_f22c5e1a70a17ba587d85ceb93ac027b);
+            
+        
+
+        marker_004d5b0dc771282a7b5b935d78d6a171.bindPopup(popup_c680748edd6ac3755adc997d90379222)
+        ;
+
+        
+    
+    
+                marker_004d5b0dc771282a7b5b935d78d6a171.setIcon(icon_954dc3de054b43c72a58dfc7b0ed5b9d);
+            
+    
+            var marker_17c732d237255917c85e1d38afeb418b = L.marker(
+                [35.1419046, 126.8841763],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_71f639bdf20cd340f0817279d5c1c023 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_522775f98f4b951b72204b6a770085a1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d5774c90343dd2ded8e02045ec0d0d1b = $(`<div id="html_d5774c90343dd2ded8e02045ec0d0d1b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>화정동 1265</b><br>         주소: 서구 화운로23번길 4-5<br>         구: 서구<br>         목적: 근린생활시설<br>         시대: 2021년 개관     </div>     </div>`)[0];
+                popup_522775f98f4b951b72204b6a770085a1.setContent(html_d5774c90343dd2ded8e02045ec0d0d1b);
+            
+        
+
+        marker_17c732d237255917c85e1d38afeb418b.bindPopup(popup_522775f98f4b951b72204b6a770085a1)
+        ;
+
+        
+    
+    
+                marker_17c732d237255917c85e1d38afeb418b.setIcon(icon_71f639bdf20cd340f0817279d5c1c023);
+            
+    
+            var marker_0d66f0bc296ba0a58566df87538f4a67 = L.marker(
+                [35.1407319, 126.8521275],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_82a729f6ca8f80168182c44367ea3522 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_33ab2364a6daf18949bd657ab7b5ef59 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b7eab5695aaf5460e890f05b2728cbea = $(`<div id="html_b7eab5695aaf5460e890f05b2728cbea" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>마륵공간</b><br>         주소: 서구 백석길 27<br>         구: 서구<br>         목적: 근린생활시설<br>         시대: 2019년 개관     </div>     </div>`)[0];
+                popup_33ab2364a6daf18949bd657ab7b5ef59.setContent(html_b7eab5695aaf5460e890f05b2728cbea);
+            
+        
+
+        marker_0d66f0bc296ba0a58566df87538f4a67.bindPopup(popup_33ab2364a6daf18949bd657ab7b5ef59)
+        ;
+
+        
+    
+    
+                marker_0d66f0bc296ba0a58566df87538f4a67.setIcon(icon_82a729f6ca8f80168182c44367ea3522);
+            
+    
+            var marker_94e3e05742301c5a40d1c98a8d36fa42 = L.marker(
+                [35.1450036, 126.8388126],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_1df4c1a0ad851aae6d7f551f2eb90861 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_02813289e4e0fda60e8db34cb531f09f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a76de24361eb1ea9aeff83b06c307a67 = $(`<div id="html_a76de24361eb1ea9aeff83b06c307a67" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>지읒컴퍼니</b><br>         주소: 서구 마륵로 67<br>         구: 서구<br>         목적: 업무시설<br>         시대: 2001년 개관     </div>     </div>`)[0];
+                popup_02813289e4e0fda60e8db34cb531f09f.setContent(html_a76de24361eb1ea9aeff83b06c307a67);
+            
+        
+
+        marker_94e3e05742301c5a40d1c98a8d36fa42.bindPopup(popup_02813289e4e0fda60e8db34cb531f09f)
+        ;
+
+        
+    
+    
+                marker_94e3e05742301c5a40d1c98a8d36fa42.setIcon(icon_1df4c1a0ad851aae6d7f551f2eb90861);
+            
+    
+            var marker_647084b56702c9399711330098437ddf = L.marker(
+                [35.1468502, 126.8402623],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_3b149b186d3d6754434ad1433c373ae0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a86df7e275f96008a6d26ec20aef981c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_aa7c685522ff1a3792d7ecdbe7a60114 = $(`<div id="html_aa7c685522ff1a3792d7ecdbe7a60114" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>김대중컨벤션센터</b><br>         주소: 서구 상무누리로 30<br>         구: 서구<br>         목적: 문화 및 집회시설<br>         시대: 2004년 개관     </div>     </div>`)[0];
+                popup_a86df7e275f96008a6d26ec20aef981c.setContent(html_aa7c685522ff1a3792d7ecdbe7a60114);
+            
+        
+
+        marker_647084b56702c9399711330098437ddf.bindPopup(popup_a86df7e275f96008a6d26ec20aef981c)
+        ;
+
+        
+    
+    
+                marker_647084b56702c9399711330098437ddf.setIcon(icon_3b149b186d3d6754434ad1433c373ae0);
+            
+    
+            var marker_a49edaf35f900a6530e8b0e679356da3 = L.marker(
+                [35.1456953, 126.843232],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_8ebc66cabf8a71b36e00c8a1320277e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23157da5cc62af0bb6a3dca2856e604a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6c777c8ab66742ba57e7b893847a952b = $(`<div id="html_6c777c8ab66742ba57e7b893847a952b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>세계광엑스포 주제전시관</b><br>         주소: 서구 상무공원로 131<br>         구: 서구<br>         목적: 문화 및 집회시설<br>         시대: 2010년 개관     </div>     </div>`)[0];
+                popup_23157da5cc62af0bb6a3dca2856e604a.setContent(html_6c777c8ab66742ba57e7b893847a952b);
+            
+        
+
+        marker_a49edaf35f900a6530e8b0e679356da3.bindPopup(popup_23157da5cc62af0bb6a3dca2856e604a)
+        ;
+
+        
+    
+    
+                marker_a49edaf35f900a6530e8b0e679356da3.setIcon(icon_8ebc66cabf8a71b36e00c8a1320277e4);
+            
+    
+            var marker_91bb7cf5ef9cd51c5061d0c43a933007 = L.marker(
+                [35.1574478, 126.8387912],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_d5074665171ef45a08571095ee2de844 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c56cbfe8e82b758fe169e4a445e17348 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4f1104206569a2a337d2a235e49c5db9 = $(`<div id="html_4f1104206569a2a337d2a235e49c5db9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전천후 게이트볼 경기장</b><br>         주소: 서구 상무누리로 123<br>         구: 서구<br>         목적: 운동시설<br>         시대: 2004년 개장     </div>     </div>`)[0];
+                popup_c56cbfe8e82b758fe169e4a445e17348.setContent(html_4f1104206569a2a337d2a235e49c5db9);
+            
+        
+
+        marker_91bb7cf5ef9cd51c5061d0c43a933007.bindPopup(popup_c56cbfe8e82b758fe169e4a445e17348)
+        ;
+
+        
+    
+    
+                marker_91bb7cf5ef9cd51c5061d0c43a933007.setIcon(icon_d5074665171ef45a08571095ee2de844);
+            
+    
+            var marker_94f80ff52af838b54186f10f23c124d2 = L.marker(
+                [35.1584234, 126.8536652],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_a3e2eb4062111de16c50a6c80cf1d5cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65a19591fd15de97fa0ab0108ae162fb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7c07b90584a5f13781d7233e73f6a69a = $(`<div id="html_7c07b90584a5f13781d7233e73f6a69a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>서부교육청 청사</b><br>         주소: 서구 상무번영로 98<br>         구: 서구<br>         목적: 업무시설<br>         시대: 1988년 개관, 2003년 신축 이전     </div>     </div>`)[0];
+                popup_65a19591fd15de97fa0ab0108ae162fb.setContent(html_7c07b90584a5f13781d7233e73f6a69a);
+            
+        
+
+        marker_94f80ff52af838b54186f10f23c124d2.bindPopup(popup_65a19591fd15de97fa0ab0108ae162fb)
+        ;
+
+        
+    
+    
+                marker_94f80ff52af838b54186f10f23c124d2.setIcon(icon_a3e2eb4062111de16c50a6c80cf1d5cf);
+            
+    
+            var marker_2e87c7d568defc3e5d52d4697b72075d = L.marker(
+                [35.1520046, 126.8505274],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_dffaab8afa8066bdefd53fc3e30951fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c99dfecac4fd8102b8ee0de7091ae0a6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0184dc57111452e43c200c8fa36bfd1c = $(`<div id="html_0184dc57111452e43c200c8fa36bfd1c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>라마다 프라자호텔</b><br>         주소: 서구 상무자유로 149<br>         구: 서구<br>         목적: 숙박시설<br>         시대: 2008년 개관     </div>     </div>`)[0];
+                popup_c99dfecac4fd8102b8ee0de7091ae0a6.setContent(html_0184dc57111452e43c200c8fa36bfd1c);
+            
+        
+
+        marker_2e87c7d568defc3e5d52d4697b72075d.bindPopup(popup_c99dfecac4fd8102b8ee0de7091ae0a6)
+        ;
+
+        
+    
+    
+                marker_2e87c7d568defc3e5d52d4697b72075d.setIcon(icon_dffaab8afa8066bdefd53fc3e30951fe);
+            
+    
+            var marker_dfadf62f286f042efbb967d07aacd23e = L.marker(
+                [35.156509, 126.8508926],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_d36917f108bb3a0c31ea1734c3ffdbe9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d8bff909d291e573f2f5566c1c8c8d7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2f30de801d846123a0cd7cfe8b2dbadf = $(`<div id="html_2f30de801d846123a0cd7cfe8b2dbadf" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>옛 토지공사 광주전남본부 사옥</b><br>         주소: 서구 시청로 91<br>         구: 서구<br>         목적: 업무시설<br>         시대: 2007년 준공, 2009년 이전     </div>     </div>`)[0];
+                popup_0d8bff909d291e573f2f5566c1c8c8d7.setContent(html_2f30de801d846123a0cd7cfe8b2dbadf);
+            
+        
+
+        marker_dfadf62f286f042efbb967d07aacd23e.bindPopup(popup_0d8bff909d291e573f2f5566c1c8c8d7)
+        ;
+
+        
+    
+    
+                marker_dfadf62f286f042efbb967d07aacd23e.setIcon(icon_d36917f108bb3a0c31ea1734c3ffdbe9);
+            
+    
+            var marker_0f237e9956d18fe13262c7cc8575675e = L.marker(
+                [35.1601047, 126.851467],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_df919435ef2ce748f517d8de9e363719 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e67f6b6204ac008e4766fc6984179fa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_88818d47e3e41f67f8c1cb7ffe75c257 = $(`<div id="html_88818d47e3e41f67f8c1cb7ffe75c257" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주광역시청</b><br>         주소: 서구 내방로 111<br>         구: 서구<br>         목적: 업무시설<br>         시대: 2004년 개관     </div>     </div>`)[0];
+                popup_0e67f6b6204ac008e4766fc6984179fa.setContent(html_88818d47e3e41f67f8c1cb7ffe75c257);
+            
+        
+
+        marker_0f237e9956d18fe13262c7cc8575675e.bindPopup(popup_0e67f6b6204ac008e4766fc6984179fa)
+        ;
+
+        
+    
+    
+                marker_0f237e9956d18fe13262c7cc8575675e.setIcon(icon_df919435ef2ce748f517d8de9e363719);
+            
+    
+            var marker_1f235996642500e70c76eb1a73983056 = L.marker(
+                [35.1337706, 126.8750042],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_1eb2d18ee7e61e5acb3b95e6e15e3b7a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39d7f23c3d96c29451d71072d7524cef = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cef6c43812afae067aed21173a1dde39 = $(`<div id="html_cef6c43812afae067aed21173a1dde39" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주 월드컵경기장</b><br>         주소: 서구 금화로 240<br>         구: 서구<br>         목적: 운동시설<br>         시대: 2011년 개장     </div>     </div>`)[0];
+                popup_39d7f23c3d96c29451d71072d7524cef.setContent(html_cef6c43812afae067aed21173a1dde39);
+            
+        
+
+        marker_1f235996642500e70c76eb1a73983056.bindPopup(popup_39d7f23c3d96c29451d71072d7524cef)
+        ;
+
+        
+    
+    
+                marker_1f235996642500e70c76eb1a73983056.setIcon(icon_1eb2d18ee7e61e5acb3b95e6e15e3b7a);
+            
+    
+            var marker_72c2ba729bca161631df3c625a44034a = L.marker(
+                [35.1297926, 126.8806618],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_4d0a1ab5c99a80e29b62ae5cb3f6224b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58749e5ab9789c11ebff89a07ccc12e6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_05d89f1db26623677d72b3470f193136 = $(`<div id="html_05d89f1db26623677d72b3470f193136" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>서빛마루문화예술회관</b><br>         주소: 서구 풍암공원로 30<br>         구: 서구<br>         목적: 문화 및 집회시설<br>         시대: 2023년 개관     </div>     </div>`)[0];
+                popup_58749e5ab9789c11ebff89a07ccc12e6.setContent(html_05d89f1db26623677d72b3470f193136);
+            
+        
+
+        marker_72c2ba729bca161631df3c625a44034a.bindPopup(popup_58749e5ab9789c11ebff89a07ccc12e6)
+        ;
+
+        
+    
+    
+                marker_72c2ba729bca161631df3c625a44034a.setIcon(icon_4d0a1ab5c99a80e29b62ae5cb3f6224b);
+            
+    
+            var marker_6451fe76063a7ffd077f30bc1324f1fa = L.marker(
+                [35.1391701, 126.9165101],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_447f246d3a01ca2e31498484509b6a75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3d8966aef90684fce293361a6c182a4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_72425273f8d3189d202e68ae5bcadcbb = $(`<div id="html_72425273f8d3189d202e68ae5bcadcbb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>양림동 공예특화거리</b><br>         주소: 남구 오기원길 20-13<br>         구: 남구<br>         목적: 근린생활시설<br>         시대: 2019년 개장     </div>     </div>`)[0];
+                popup_b3d8966aef90684fce293361a6c182a4.setContent(html_72425273f8d3189d202e68ae5bcadcbb);
+            
+        
+
+        marker_6451fe76063a7ffd077f30bc1324f1fa.bindPopup(popup_b3d8966aef90684fce293361a6c182a4)
+        ;
+
+        
+    
+    
+                marker_6451fe76063a7ffd077f30bc1324f1fa.setIcon(icon_447f246d3a01ca2e31498484509b6a75);
+            
+    
+            var marker_7d3b599294561c3217657d5fd6ab76c6 = L.marker(
+                [35.1379913, 126.9128944],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_21f5ebae5a0f3d13ada0a3926d5c87bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de13e8511ab8b88cc0f8ea419d4326a7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2067bfdae03cebe87349520ba8d2dd5a = $(`<div id="html_2067bfdae03cebe87349520ba8d2dd5a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>힐사이드 양림</b><br>         주소: 남구 우월순길 12<br>         구: 남구<br>         목적: 근린생활시설<br>         시대: 2019년 개관     </div>     </div>`)[0];
+                popup_de13e8511ab8b88cc0f8ea419d4326a7.setContent(html_2067bfdae03cebe87349520ba8d2dd5a);
+            
+        
+
+        marker_7d3b599294561c3217657d5fd6ab76c6.bindPopup(popup_de13e8511ab8b88cc0f8ea419d4326a7)
+        ;
+
+        
+    
+    
+                marker_7d3b599294561c3217657d5fd6ab76c6.setIcon(icon_21f5ebae5a0f3d13ada0a3926d5c87bc);
+            
+    
+            var marker_3d758f7780199dfe4704f0401774f2bd = L.marker(
+                [35.1393388, 126.916292],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_8b4eb3e150724a99307052a74ba72961 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eaf2f7fa2ec3d90b4ef084f13f1f1a8b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ef40d6b39da9868785f1d051e6561d6d = $(`<div id="html_ef40d6b39da9868785f1d051e6561d6d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>아크레타 양림</b><br>         주소: 남구 백서로 76<br>         구: 남구<br>         목적: 근린생활시설<br>         시대: 2018년 개관     </div>     </div>`)[0];
+                popup_eaf2f7fa2ec3d90b4ef084f13f1f1a8b.setContent(html_ef40d6b39da9868785f1d051e6561d6d);
+            
+        
+
+        marker_3d758f7780199dfe4704f0401774f2bd.bindPopup(popup_eaf2f7fa2ec3d90b4ef084f13f1f1a8b)
+        ;
+
+        
+    
+    
+                marker_3d758f7780199dfe4704f0401774f2bd.setIcon(icon_8b4eb3e150724a99307052a74ba72961);
+            
+    
+            var marker_852ab4db4e6096e2f6be676bb027651d = L.marker(
+                [35.091263, 126.8529243],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_6160593a6acd63a986ec7c98ae7427c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27fa534addcece2fa3e8f81f18a21adb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b4931259fe6f525ecea5412e8f67bda0 = $(`<div id="html_b4931259fe6f525ecea5412e8f67bda0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>어반브룩</b><br>         주소: 남구 임암길 181<br>         구: 남구<br>         목적: 근린생활시설<br>         시대: 2020 개관     </div>     </div>`)[0];
+                popup_27fa534addcece2fa3e8f81f18a21adb.setContent(html_b4931259fe6f525ecea5412e8f67bda0);
+            
+        
+
+        marker_852ab4db4e6096e2f6be676bb027651d.bindPopup(popup_27fa534addcece2fa3e8f81f18a21adb)
+        ;
+
+        
+    
+    
+                marker_852ab4db4e6096e2f6be676bb027651d.setIcon(icon_6160593a6acd63a986ec7c98ae7427c9);
+            
+    
+            var marker_25855ba6d9733e6dc3dd94690f1fbb7f = L.marker(
+                [35.126684, 126.9191099],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_72fb26ab3d3ed6d2bc64b10364455ec9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9495b55df12b2a6e04567081e2c6b2d0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2b259406c559e077f0a6747afd4a9d09 = $(`<div id="html_2b259406c559e077f0a6747afd4a9d09" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>남선교회</b><br>         주소: 남구 오방로 64<br>         구: 남구<br>         목적: 종교시설<br>         시대: 1992년 개관     </div>     </div>`)[0];
+                popup_9495b55df12b2a6e04567081e2c6b2d0.setContent(html_2b259406c559e077f0a6747afd4a9d09);
+            
+        
+
+        marker_25855ba6d9733e6dc3dd94690f1fbb7f.bindPopup(popup_9495b55df12b2a6e04567081e2c6b2d0)
+        ;
+
+        
+    
+    
+                marker_25855ba6d9733e6dc3dd94690f1fbb7f.setIcon(icon_72fb26ab3d3ed6d2bc64b10364455ec9);
+            
+    
+            var marker_c65b1396f0c05cbf3265b67a60c432b7 = L.marker(
+                [35.1234765, 126.9131927],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_68e5b35e9c96d36f0ddaf73b87770f7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0505bb7acf3dc229bc1587375bc0b96d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_098754dad7df8c20009175deafb37840 = $(`<div id="html_098754dad7df8c20009175deafb37840" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>220</b><br>         주소: 남구 봉선동<br>         구: 남구<br>         목적: 단독주택<br>         시대: 2002년 준공, 2021년 리모델링     </div>     </div>`)[0];
+                popup_0505bb7acf3dc229bc1587375bc0b96d.setContent(html_098754dad7df8c20009175deafb37840);
+            
+        
+
+        marker_c65b1396f0c05cbf3265b67a60c432b7.bindPopup(popup_0505bb7acf3dc229bc1587375bc0b96d)
+        ;
+
+        
+    
+    
+                marker_c65b1396f0c05cbf3265b67a60c432b7.setIcon(icon_68e5b35e9c96d36f0ddaf73b87770f7f);
+            
+    
+            var marker_9c980a587dd80e7571c07b25cf511007 = L.marker(
+                [35.1377798, 126.9042413],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_e27b750bbb9919781b583ad914d0375c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d4f5502a6100f533c9eb28e57620ee9b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0b3cd242fb7ae7c106004f6566e166fb = $(`<div id="html_0b3cd242fb7ae7c106004f6566e166fb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>백소헌</b><br>         주소: 남구 백운동<br>         구: 남구<br>         목적: 단독주택<br>         시대: 2019년 개관     </div>     </div>`)[0];
+                popup_d4f5502a6100f533c9eb28e57620ee9b.setContent(html_0b3cd242fb7ae7c106004f6566e166fb);
+            
+        
+
+        marker_9c980a587dd80e7571c07b25cf511007.bindPopup(popup_d4f5502a6100f533c9eb28e57620ee9b)
+        ;
+
+        
+    
+    
+                marker_9c980a587dd80e7571c07b25cf511007.setIcon(icon_e27b750bbb9919781b583ad914d0375c);
+            
+    
+            var marker_6bdda321dfcda683bda15409115bc7dc = L.marker(
+                [35.1013144, 126.9064869],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_1e4fc5bc4064a2b8f8e5f95dde809e02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_74a800770d503d8e53b542292d008a74 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_80ca1283bc181e155fdd4ade2c188d6a = $(`<div id="html_80ca1283bc181e155fdd4ade2c188d6a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>노대동792</b><br>         주소: 남구 노대동 792<br>         구: 남구<br>         목적: 단독주택<br>         시대: 2014년 준공     </div>     </div>`)[0];
+                popup_74a800770d503d8e53b542292d008a74.setContent(html_80ca1283bc181e155fdd4ade2c188d6a);
+            
+        
+
+        marker_6bdda321dfcda683bda15409115bc7dc.bindPopup(popup_74a800770d503d8e53b542292d008a74)
+        ;
+
+        
+    
+    
+                marker_6bdda321dfcda683bda15409115bc7dc.setIcon(icon_1e4fc5bc4064a2b8f8e5f95dde809e02);
+            
+    
+            var marker_97000708c02bca794dd4b4dfa6435630 = L.marker(
+                [35.0809087, 126.8337312],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_5999710b0fc1ca574993364c68cbe6d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3257b21e62e311e3bbba9e58456ad25b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_645d39c78428aa6510d11572aa332cdc = $(`<div id="html_645d39c78428aa6510d11572aa332cdc" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>4D 고싸움놀이 영상체험관</b><br>         주소: 남구 고싸움로 2<br>         구: 남구<br>         목적: 문화 및 집회시설<br>         시대: 2010년 개관     </div>     </div>`)[0];
+                popup_3257b21e62e311e3bbba9e58456ad25b.setContent(html_645d39c78428aa6510d11572aa332cdc);
+            
+        
+
+        marker_97000708c02bca794dd4b4dfa6435630.bindPopup(popup_3257b21e62e311e3bbba9e58456ad25b)
+        ;
+
+        
+    
+    
+                marker_97000708c02bca794dd4b4dfa6435630.setIcon(icon_5999710b0fc1ca574993364c68cbe6d7);
+            
+    
+            var marker_52b3584310eb528b9533c12ba34e891d = L.marker(
+                [35.1470369, 126.9095367],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_5d5b165c3b891d4b72c620b9f0f92a1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a77c30660378d43291b01577bc3bac9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f66bd8ce6951434b5178da5c30ea0e02 = $(`<div id="html_f66bd8ce6951434b5178da5c30ea0e02" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주시민회관</b><br>         주소: 남구 중앙로107번길 15<br>         구: 남구<br>         목적: 문화 및 집회시설<br>         시대: 1971년 개관     </div>     </div>`)[0];
+                popup_2a77c30660378d43291b01577bc3bac9.setContent(html_f66bd8ce6951434b5178da5c30ea0e02);
+            
+        
+
+        marker_52b3584310eb528b9533c12ba34e891d.bindPopup(popup_2a77c30660378d43291b01577bc3bac9)
+        ;
+
+        
+    
+    
+                marker_52b3584310eb528b9533c12ba34e891d.setIcon(icon_5d5b165c3b891d4b72c620b9f0f92a1e);
+            
+    
+            var marker_b161470836991f796c67f94acaaf9624 = L.marker(
+                [35.1405093, 126.9164646],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_461d0a09af0531243bae14657d145bdc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22ce8307c2f1cdbe4fd73ada97735dd7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6161be964e3948da581b2dabe8c7c84b = $(`<div id="html_6161be964e3948da581b2dabe8c7c84b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>양림커뮤니티센터</b><br>         주소: 남구 백서로 94<br>         구: 남구<br>         목적: 근린생활시설<br>         시대: 2015년 개관     </div>     </div>`)[0];
+                popup_22ce8307c2f1cdbe4fd73ada97735dd7.setContent(html_6161be964e3948da581b2dabe8c7c84b);
+            
+        
+
+        marker_b161470836991f796c67f94acaaf9624.bindPopup(popup_22ce8307c2f1cdbe4fd73ada97735dd7)
+        ;
+
+        
+    
+    
+                marker_b161470836991f796c67f94acaaf9624.setIcon(icon_461d0a09af0531243bae14657d145bdc);
+            
+    
+            var marker_cf1aa71c3e86ec5d20a86f5305d6626a = L.marker(
+                [35.1416518, 126.9114019],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_8132d300bf29e15f2cd1abd75c66d101 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9158f01f34622bcbc0b896dfeeb8be4c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0ba72d99934a9a397be1f0d75f7922b0 = $(`<div id="html_0ba72d99934a9a397be1f0d75f7922b0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>사직공원 전망타워</b><br>         주소: 남구 사직길 49-1<br>         구: 남구<br>         목적: 관광휴게시설<br>         시대: 2015년 개관     </div>     </div>`)[0];
+                popup_9158f01f34622bcbc0b896dfeeb8be4c.setContent(html_0ba72d99934a9a397be1f0d75f7922b0);
+            
+        
+
+        marker_cf1aa71c3e86ec5d20a86f5305d6626a.bindPopup(popup_9158f01f34622bcbc0b896dfeeb8be4c)
+        ;
+
+        
+    
+    
+                marker_cf1aa71c3e86ec5d20a86f5305d6626a.setIcon(icon_8132d300bf29e15f2cd1abd75c66d101);
+            
+    
+            var marker_ff285e3ffb8ac831c4a972232f91daa4 = L.marker(
+                [35.14832, 126.9089319],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_f6eb6ae287ed42a45b208b8a51e6b257 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5aabeac2a405ea5d3a8b4771a19c71f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7ebc1d4f25cb9284643c112915a07bce = $(`<div id="html_7ebc1d4f25cb9284643c112915a07bce" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>빛고을 시민문화관</b><br>         주소: 남구 천변좌로338번길 7<br>         구: 남구<br>         목적: 문화 및 집회시설<br>         시대: 2010년 개관     </div>     </div>`)[0];
+                popup_5aabeac2a405ea5d3a8b4771a19c71f3.setContent(html_7ebc1d4f25cb9284643c112915a07bce);
+            
+        
+
+        marker_ff285e3ffb8ac831c4a972232f91daa4.bindPopup(popup_5aabeac2a405ea5d3a8b4771a19c71f3)
+        ;
+
+        
+    
+    
+                marker_ff285e3ffb8ac831c4a972232f91daa4.setIcon(icon_f6eb6ae287ed42a45b208b8a51e6b257);
+            
+    
+            var marker_4f3fdf7ea6f3fd7ba76459da7aa1cf36 = L.marker(
+                [35.1469396, 126.909874],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_15622d767917a530698f5191b7ff3259 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8bb7a1f563463f0253fc88a017badb69 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7eae53a59999abad6122c9f923f8f4a9 = $(`<div id="html_7eae53a59999abad6122c9f923f8f4a9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>희경루</b><br>         주소: 남구 구동<br>         구: 남구<br>         목적: 누정<br>         시대: 2023년     </div>     </div>`)[0];
+                popup_8bb7a1f563463f0253fc88a017badb69.setContent(html_7eae53a59999abad6122c9f923f8f4a9);
+            
+        
+
+        marker_4f3fdf7ea6f3fd7ba76459da7aa1cf36.bindPopup(popup_8bb7a1f563463f0253fc88a017badb69)
+        ;
+
+        
+    
+    
+                marker_4f3fdf7ea6f3fd7ba76459da7aa1cf36.setIcon(icon_15622d767917a530698f5191b7ff3259);
+            
+    
+            var marker_afad5fda24647e93478d3bbc9026bebf = L.marker(
+                [35.1769099, 126.9068927],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_627e1dd7b6d207b7be5f64782bffcb31 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3575d19c126a0e0c3ee59570ab9f7f56 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6f530c9a436dca8e50725098252e4b47 = $(`<div id="html_6f530c9a436dca8e50725098252e4b47" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>전남대학교 교육융합센터</b><br>         주소: 북구 용봉로 77<br>         구: 북구<br>         목적: 교육연구시설<br>         시대: 2019년 개관     </div>     </div>`)[0];
+                popup_3575d19c126a0e0c3ee59570ab9f7f56.setContent(html_6f530c9a436dca8e50725098252e4b47);
+            
+        
+
+        marker_afad5fda24647e93478d3bbc9026bebf.bindPopup(popup_3575d19c126a0e0c3ee59570ab9f7f56)
+        ;
+
+        
+    
+    
+                marker_afad5fda24647e93478d3bbc9026bebf.setIcon(icon_627e1dd7b6d207b7be5f64782bffcb31);
+            
+    
+            var marker_33c0bd4ff13829134ba4a7b939d8d53c = L.marker(
+                [35.22885, 126.8393605],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_e52ed49e82b8ed9112e7c03c51137a6d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e3f60c5358f74e4d71f46286367791e3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e1dcaf6b91da479572b286dd6c7b65c9 = $(`<div id="html_e1dcaf6b91da479572b286dd6c7b65c9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주과학기술원 중앙도서관</b><br>         주소: 북구 첨단과기로 123<br>         구: 북구<br>         목적: 교육연구시설<br>         시대: 2015년 개관     </div>     </div>`)[0];
+                popup_e3f60c5358f74e4d71f46286367791e3.setContent(html_e1dcaf6b91da479572b286dd6c7b65c9);
+            
+        
+
+        marker_33c0bd4ff13829134ba4a7b939d8d53c.bindPopup(popup_e3f60c5358f74e4d71f46286367791e3)
+        ;
+
+        
+    
+    
+                marker_33c0bd4ff13829134ba4a7b939d8d53c.setIcon(icon_e52ed49e82b8ed9112e7c03c51137a6d);
+            
+    
+            var marker_0f057a9b1ad776299a3475523ada9c7e = L.marker(
+                [35.2020664, 126.8741625],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ff435d1ed6a83f0b03e0fb82ffbca57e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ce0efdef3befe3866d6958b9fa9b2b3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_49d659dba608edefd41dc41dc41c3966 = $(`<div id="html_49d659dba608edefd41dc41dc41c3966" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>시립미술관 국제레지던시 스튜디오</b><br>         주소: 북구 하서로 52<br>         구: 북구<br>         목적: 업무시설<br>         시대: 2017년 개관     </div>     </div>`)[0];
+                popup_6ce0efdef3befe3866d6958b9fa9b2b3.setContent(html_49d659dba608edefd41dc41dc41c3966);
+            
+        
+
+        marker_0f057a9b1ad776299a3475523ada9c7e.bindPopup(popup_6ce0efdef3befe3866d6958b9fa9b2b3)
+        ;
+
+        
+    
+    
+                marker_0f057a9b1ad776299a3475523ada9c7e.setIcon(icon_ff435d1ed6a83f0b03e0fb82ffbca57e);
+            
+    
+            var marker_10adaee5400c834cee24a25bca42083a = L.marker(
+                [35.1886919, 126.9167159],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_ae3e6f6567e677e5f7e81312cf14287c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb14afc17de6fa52c9c93c63e9aee060 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e00dbc0e8eec6c5ef6306e08682df112 = $(`<div id="html_e00dbc0e8eec6c5ef6306e08682df112" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>빛고을국민안전체험관</b><br>         주소: 북구 능안로30번길 3<br>         구: 북구<br>         목적: 문화 및 집회시설<br>         시대: 2022년 개관     </div>     </div>`)[0];
+                popup_bb14afc17de6fa52c9c93c63e9aee060.setContent(html_e00dbc0e8eec6c5ef6306e08682df112);
+            
+        
+
+        marker_10adaee5400c834cee24a25bca42083a.bindPopup(popup_bb14afc17de6fa52c9c93c63e9aee060)
+        ;
+
+        
+    
+    
+                marker_10adaee5400c834cee24a25bca42083a.setIcon(icon_ae3e6f6567e677e5f7e81312cf14287c);
+            
+    
+            var marker_078c3cb57aaf86a47cbdbb5e94b85b5d = L.marker(
+                [35.1865313, 126.8695851],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_10f5363798a32f45f4869de2df05f3be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1435d001ad296033e8a346351ae5ffa4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6627410da0e989624ab8c6a99fa836da = $(`<div id="html_6627410da0e989624ab8c6a99fa836da" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주 문화예술회관</b><br>         주소: 북구 북문대로 60<br>         구: 북구<br>         목적: 문화 및 집회시설<br>         시대: 1991년 개관     </div>     </div>`)[0];
+                popup_1435d001ad296033e8a346351ae5ffa4.setContent(html_6627410da0e989624ab8c6a99fa836da);
+            
+        
+
+        marker_078c3cb57aaf86a47cbdbb5e94b85b5d.bindPopup(popup_1435d001ad296033e8a346351ae5ffa4)
+        ;
+
+        
+    
+    
+                marker_078c3cb57aaf86a47cbdbb5e94b85b5d.setIcon(icon_10f5363798a32f45f4869de2df05f3be);
+            
+    
+            var marker_7489465af56a5d75cf0add952393095e = L.marker(
+                [35.2003772, 126.8645646],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_1d43f28d04acee847b6a2b4f75fffb18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_797bff07b91d695fcc2b3b87180887c7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4a16a5b19a23ecc82cd0b484f6fc59ab = $(`<div id="html_4a16a5b19a23ecc82cd0b484f6fc59ab" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>플레넘</b><br>         주소: 북구 연제동<br>         구: 북구<br>         목적: 업무시설<br>         시대: 2015년     </div>     </div>`)[0];
+                popup_797bff07b91d695fcc2b3b87180887c7.setContent(html_4a16a5b19a23ecc82cd0b484f6fc59ab);
+            
+        
+
+        marker_7489465af56a5d75cf0add952393095e.bindPopup(popup_797bff07b91d695fcc2b3b87180887c7)
+        ;
+
+        
+    
+    
+                marker_7489465af56a5d75cf0add952393095e.setIcon(icon_1d43f28d04acee847b6a2b4f75fffb18);
+            
+    
+            var marker_f9089559a24abcf0b51682a8a7d72860 = L.marker(
+                [35.1680715, 126.8882664],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_c8a4d0d9dde553a2a4829c49d5b748c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a7cee6799f4d9abd97bbebccfa28e09e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a958f8283234531e9a1730920719ccb3 = $(`<div id="html_a958f8283234531e9a1730920719ccb3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주-기아 챔피언스 필드</b><br>         주소: 북구 서림로 10<br>         구: 북구<br>         목적: 운동시설<br>         시대: 2014년 개장     </div>     </div>`)[0];
+                popup_a7cee6799f4d9abd97bbebccfa28e09e.setContent(html_a958f8283234531e9a1730920719ccb3);
+            
+        
+
+        marker_f9089559a24abcf0b51682a8a7d72860.bindPopup(popup_a7cee6799f4d9abd97bbebccfa28e09e)
+        ;
+
+        
+    
+    
+                marker_f9089559a24abcf0b51682a8a7d72860.setIcon(icon_c8a4d0d9dde553a2a4829c49d5b748c1);
+            
+    
+            var marker_fba78d5b9729a9da44217bbe06e9e8a1 = L.marker(
+                [35.1598496, 126.8975546],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_24f1b73d4c9970d5354076c80cd63ae3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c5ed7cc5f90f0964f07e9e57aa4c2d0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3c13b2aee945ce0fcfafeae0ce3d9fdd = $(`<div id="html_3c13b2aee945ce0fcfafeae0ce3d9fdd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>교보생명 리모델링 광주 누문동 사옥</b><br>         주소: 북구 금남로 136<br>         구: 북구<br>         목적: 업무시설<br>         시대: 1986년 건립, 2014년 리모델링     </div>     </div>`)[0];
+                popup_0c5ed7cc5f90f0964f07e9e57aa4c2d0.setContent(html_3c13b2aee945ce0fcfafeae0ce3d9fdd);
+            
+        
+
+        marker_fba78d5b9729a9da44217bbe06e9e8a1.bindPopup(popup_0c5ed7cc5f90f0964f07e9e57aa4c2d0)
+        ;
+
+        
+    
+    
+                marker_fba78d5b9729a9da44217bbe06e9e8a1.setIcon(icon_24f1b73d4c9970d5354076c80cd63ae3);
+            
+    
+            var marker_022f6f53b647115674df0b36e9f44fba = L.marker(
+                [35.1928303, 126.9044258],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_c6f8ed34765ee5e119837c799558e2d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3ce072d9417a85210416aa4c9475922 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fd95091e19a3f7c77057d8377cd888b9 = $(`<div id="html_fd95091e19a3f7c77057d8377cd888b9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>한국전력공사 전남지사</b><br>         주소: 북구 우치로 222<br>         구: 북구<br>         목적: 업무시설<br>         시대: nan     </div>     </div>`)[0];
+                popup_d3ce072d9417a85210416aa4c9475922.setContent(html_fd95091e19a3f7c77057d8377cd888b9);
+            
+        
+
+        marker_022f6f53b647115674df0b36e9f44fba.bindPopup(popup_d3ce072d9417a85210416aa4c9475922)
+        ;
+
+        
+    
+    
+                marker_022f6f53b647115674df0b36e9f44fba.setIcon(icon_c6f8ed34765ee5e119837c799558e2d4);
+            
+    
+            var marker_e729e4fbe52bd1fb682c70bd5646fcde = L.marker(
+                [35.9368303, 128.5595346],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_03c5a8c2fbe86c328669ee5ec5b057b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_522f5494116486ae543ceee467c95df6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4b86e669c8f77c806ddb9ea4ef982e63 = $(`<div id="html_4b86e669c8f77c806ddb9ea4ef982e63" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>청소년 수련관 별관</b><br>         주소: 북구 대천로 86<br>         구: 북구<br>         목적: 수련시설<br>         시대: 2009년 개관     </div>     </div>`)[0];
+                popup_522f5494116486ae543ceee467c95df6.setContent(html_4b86e669c8f77c806ddb9ea4ef982e63);
+            
+        
+
+        marker_e729e4fbe52bd1fb682c70bd5646fcde.bindPopup(popup_522f5494116486ae543ceee467c95df6)
+        ;
+
+        
+    
+    
+                marker_e729e4fbe52bd1fb682c70bd5646fcde.setIcon(icon_03c5a8c2fbe86c328669ee5ec5b057b9);
+            
+    
+            var marker_4a2b97180ea9a87cf06bc56ef961ec38 = L.marker(
+                [35.2020664, 126.8741625],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_4299d166537a34f07c1c96ac2634cd98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5eff4aac03a2e916f13305762845b672 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0dc34f1fb270ad1e9c75edd396600bf8 = $(`<div id="html_0dc34f1fb270ad1e9c75edd396600bf8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>광주시립미술관</b><br>         주소: 북구 하서로 52<br>         구: 북구<br>         목적: 문화 및 집회시설<br>         시대: 1992년 개관     </div>     </div>`)[0];
+                popup_5eff4aac03a2e916f13305762845b672.setContent(html_0dc34f1fb270ad1e9c75edd396600bf8);
+            
+        
+
+        marker_4a2b97180ea9a87cf06bc56ef961ec38.bindPopup(popup_5eff4aac03a2e916f13305762845b672)
+        ;
+
+        
+    
+    
+                marker_4a2b97180ea9a87cf06bc56ef961ec38.setIcon(icon_4299d166537a34f07c1c96ac2634cd98);
+            
+    
+            var marker_62d4871c5154c730896cad260d59ce28 = L.marker(
+                [35.1807965, 126.7986001],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_3b9a27e26752b4b44d233043ee2f3c43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_97ffc2153992293d3e5fe0bcedd1915d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_534908c4fc31e41dcb62c126c4b290af = $(`<div id="html_534908c4fc31e41dcb62c126c4b290af" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>아우트라우드</b><br>         주소: 광산구 단전4길 3<br>         구: 광산구<br>         목적: 근린생활시설<br>         시대: nan     </div>     </div>`)[0];
+                popup_97ffc2153992293d3e5fe0bcedd1915d.setContent(html_534908c4fc31e41dcb62c126c4b290af);
+            
+        
+
+        marker_62d4871c5154c730896cad260d59ce28.bindPopup(popup_97ffc2153992293d3e5fe0bcedd1915d)
+        ;
+
+        
+    
+    
+                marker_62d4871c5154c730896cad260d59ce28.setIcon(icon_3b9a27e26752b4b44d233043ee2f3c43);
+            
+    
+            var marker_4b69c0c792c881a4293cf95978bec58c = L.marker(
+                [35.207725, 126.8514275],
+                {
+}
+            ).addTo(map_007309ff5982cd3e12380e3d07a9dfca);
+        
+    
+            var icon_5e2ddc0ed6f205d253d40ba16e43ec16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76553b09d3b2965417822db18fed6583 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_39f926ea8443efdac4f8e7349debab93 = $(`<div id="html_39f926ea8443efdac4f8e7349debab93" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 300px;">         <b>첨단 배드민턴장</b><br>         주소: 광산구 첨단강변로 76<br>         구: 광산구<br>         목적: 운동시설<br>         시대: 2015년 개관     </div>     </div>`)[0];
+                popup_76553b09d3b2965417822db18fed6583.setContent(html_39f926ea8443efdac4f8e7349debab93);
+            
+        
+
+        marker_4b69c0c792c881a4293cf95978bec58c.bindPopup(popup_76553b09d3b2965417822db18fed6583)
+        ;
+
+        
+    
+    
+                marker_4b69c0c792c881a4293cf95978bec58c.setIcon(icon_5e2ddc0ed6f205d253d40ba16e43ec16);
+            
+</script>
+</html>
