@@ -14,7 +14,7 @@ import logging
 # ============================================================
 
 INPUT_FILE = "./Major_Tourist_Attractions_in_Gwangju_FINAL.csv"
-OUTPUT_MAP = "./gwangju_tourist_attractions_map.html"
+OUTPUT_MAP = "./gwangju_omae_tourist_attractions_map.html"
 
 GWANGJU_CENTER = [35.1595, 126.8526]
 ZOOM_START = 12
@@ -509,3 +509,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
