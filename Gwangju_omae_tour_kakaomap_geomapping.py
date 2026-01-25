@@ -23,9 +23,9 @@ from typing import Dict, Optional
 KAKAO_API_KEY = "YOUR_REST_API_KEY"
 
 # 파일 경로
-INPUT_FILE = "D:\RISE\Gwangju\Major_Tourist_Attractions_in_Gwangju_RAW.csv"  # 원본 파일
-STEP1_OUTPUT_FILE = r"D:\RISE\Gwangju\v1\Major_Tourist_Attractions_in_Gwangju_STEP1.csv"  # Step 1 결과
-FINAL_OUTPUT_FILE = r"D:\RISE\Gwangju\v1\Major_Tourist_Attractions_in_Gwangju_FINAL.csv"  # 최종 결과
+INPUT_FILE = "./Major_Tourist_Attractions_in_Gwangju_RAW.csv"  # 원본 파일
+STEP1_OUTPUT_FILE = "./Major_Tourist_Attractions_in_Gwangju_STEP1.csv"  # Step 1 결과
+FINAL_OUTPUT_FILE = "./Major_Tourist_Attractions_in_Gwangju_FINAL.csv"  # 최종 결과
 
 # Kakao API
 KAKAO_LOCAL_SEARCH_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
@@ -453,4 +453,5 @@ def main():
 # ============================================================
 
 if __name__ == "__main__":
+
     main()
